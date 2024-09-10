@@ -1,11 +1,9 @@
 package org.codecrafters.educa.profiles;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Period;
-import java.util.Date;
 
-public class student {
+public class Student {
     private int id;
     private String firstName;
     private String lastName;
@@ -13,7 +11,7 @@ public class student {
     private String DOB;
     private String conditions;
 
-    public student(int id, String firstName, String lastName, int age, String DOB, String conditions){
+    public Student(int id, String firstName, String lastName, int age, String DOB, String conditions){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,7 +20,7 @@ public class student {
         this.conditions = conditions;
     }
 
-    public student(String firstName, String lastName, int age, String DOB, String conditions){
+    public Student(String firstName, String lastName, int age, String DOB, String conditions){
         this.firstName = firstName;
         this.lastName = lastName;
         this.DOB = DOB;
