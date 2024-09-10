@@ -51,7 +51,7 @@ public class student {
         this.age = Period.between(LocalDate.parse(DOB), LocalDate.now()).getYears();
     }
 
-    public void setConditions(String conditions){this.conditions = conditions};
+    public void setConditions(String conditions){this.conditions = conditions;};
 
     public String toString() {
         return "ID: " + id +
