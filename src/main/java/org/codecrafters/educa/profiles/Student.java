@@ -2,6 +2,7 @@ package org.codecrafters.educa.profiles;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class Student {
     private int id;
@@ -16,15 +17,16 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.DOB = DOB;
-        this.age = Period.between(LocalDate.parse(DOB), LocalDate.now()).getYears();
+        this.age = age;
         this.conditions = conditions;
     }
 
-    public Student(String firstName, String lastName, int age, String DOB, String conditions){
+    public Student(String firstName, String lastName, String DOB, String conditions){
         this.firstName = firstName;
         this.lastName = lastName;
         this.DOB = DOB;
-        this.age = Period.between(LocalDate.parse(DOB), LocalDate.now()).getYears();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.age = Period.between(LocalDate.parse(DOB, formatter), LocalDate.now()).getYears();
         this.conditions = conditions;
     }
 

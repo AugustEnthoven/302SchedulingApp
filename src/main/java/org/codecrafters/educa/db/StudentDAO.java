@@ -6,10 +6,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class studentDAO {
+public class StudentDAO {
     private Connection connection;
 
-    public studentDAO(){
+    public StudentDAO(){
         connection = DatabaseConnection.getInstance();
     }
 
@@ -18,12 +18,12 @@ public class studentDAO {
             Statement createTable = connection.createStatement();
             createTable.execute(
                     "CREATE TABLE IF NOT EXISTS students ("
-                    + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "firstName VARCHAR NOT NULL, "
-                    + "lastName VARCHAR NOT NULL, "
-                    + "age INTEGER NOT NULL, "
-                    + "dob VARCHAR NOT NULL, "
-                    + "conditions VARCHAR NOT NULL"
+                    + "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + "FirstName VARCHAR NOT NULL, "
+                    + "LastName VARCHAR NOT NULL, "
+                    + "Age INTEGER NOT NULL, "
+                    + "Birthday VARCHAR NOT NULL, "
+                    + "Conditions VARCHAR NOT NULL"
                     + ")"
             );
         } catch (SQLException ex){
@@ -34,7 +34,7 @@ public class studentDAO {
     public void insert(Student student){
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
-                    "INSERT INTO students (firstName, lastName, age, dob, conditions)" +
+                    "INSERT INTO students (FirstName, LastName, Age, Birthday, Conditions)" +
                             "VALUES (?, ?, ?, ?, ?)"
             );
             insertAccount.setString(1, student.getFirstName());
@@ -48,11 +48,11 @@ public class studentDAO {
         }
     }
 
-    public void update( Student student){
+    public void update(Student student){
         try{
             PreparedStatement updateAccount = connection.prepareStatement(
-                    "UPDATE students SET firstName = ?, lastName = ?, " +
-                            "age = ?, dob = ?, conditions = ?"
+                    "UPDATE students SET FirstName = ?, LastName = ?, " +
+                            "Age = ?, Birthday = ?, Conditions = ?"
             );
             updateAccount.setString(1, student.getFirstName());
             updateAccount.setString(2, student.getLastName());
@@ -85,12 +85,12 @@ public class studentDAO {
             while (rs.next()){
                 students.add(
                         new Student(
-                                rs.getInt("id"),
-                                rs.getString("firstName"),
-                                rs.getString("lastName"),
-                                rs.getInt("age"),
-                                rs.getString("dob"),
-                                rs.getString("conditions")
+                                rs.getInt("ID"),
+                                rs.getString("FirstName"),
+                                rs.getString("LastName"),
+                                rs.getInt("Age"),
+                                rs.getString("Birthday"),
+                                rs.getString("Conditions")
                         )
                 );
             }
@@ -103,18 +103,18 @@ public class studentDAO {
     public Student getById(int id){
         try {
             PreparedStatement getAccount = connection.prepareStatement(
-                    "SELECT * FROM students WHERE id = ?"
+                    "SELECT * FROM students WHERE ID = ?"
             );
             getAccount.setInt(1, id);
             ResultSet rs = getAccount.executeQuery();
             if (rs.next()){
                 return new Student(
-                        rs.getInt("id"),
-                        rs.getString("firstName"),
-                        rs.getString("lastName"),
-                        rs.getInt("age"),
-                        rs.getString("dob"),
-                        rs.getString("conditions")
+                        rs.getInt("ID"),
+                        rs.getString("FirstName"),
+                        rs.getString("LastName"),
+                        rs.getInt("Age"),
+                        rs.getString("Birthday"),
+                        rs.getString("Conditions")
                 );
             }
         } catch (SQLException ex) {
