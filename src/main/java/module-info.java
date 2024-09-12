@@ -2,6 +2,7 @@ module org.codecrafters.educa {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires org.junit.jupiter.api;
 
 
     opens org.codecrafters.educa to javafx.fxml;

@@ -112,7 +112,7 @@ public class StudentDAO {
 
     /**
      * A function for returing a list of all students within the database
-     * @return List<Student> object containing all Students in the database
+     * @return List object containing all Students in the database
      */
     public List<Student> getAll() {
         List<Student> students = new ArrayList<>();
