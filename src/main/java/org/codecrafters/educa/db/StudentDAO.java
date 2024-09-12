@@ -6,13 +6,22 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class studentDAO {
+/**
+ * Class for creating a Student Database Access Object
+ */
+public class StudentDAO {
     private Connection connection;
 
-    public studentDAO(){
+    /**
+     * Constructor for StudentDAO object and its connection to the database
+     */
+    public StudentDAO(){
         connection = DatabaseConnection.getInstance();
     }
 
+    /**
+     * Function for creating a students table in the database
+     */
     public void createTable() {
         try {
             Statement createTable = connection.createStatement();
@@ -31,6 +40,22 @@ public class studentDAO {
         }
     }
 
+    /**
+     * A function for dropping the students table from the database
+     */
+    public void dropTable() {
+        try {
+            Statement createTable = connection.createStatement();
+            createTable.execute("DROP TABLE students");
+        } catch (SQLException ex){
+            System.err.println(ex);
+        }
+    }
+
+    /**
+     * A function for parsing a Student object into the database
+     * @param student a Student object to be inserted into the database
+     */
     public void insert(Student student){
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
@@ -48,6 +73,10 @@ public class studentDAO {
         }
     }
 
+    /**
+     * Function for updating student information in the database
+     * @param student Student object to be updated
+     */
     public void update( Student student){
         try{
             PreparedStatement updateAccount = connection.prepareStatement(
@@ -65,6 +94,10 @@ public class studentDAO {
         }
     }
 
+    /**
+     * Deletes a Student from the Database with the given ID
+     * @param id the ID of the student to be deleted
+     */
     public void delete(int id){
         try{
             PreparedStatement deleteAccount = connection.prepareStatement(
@@ -77,6 +110,10 @@ public class studentDAO {
         }
     }
 
+    /**
+     * A function for returing a list of all students within the database
+     * @return List<Student> object containing all Students in the database
+     */
     public List<Student> getAll() {
         List<Student> students = new ArrayList<>();
         try {
@@ -100,6 +137,11 @@ public class studentDAO {
         return students;
     }
 
+    /**
+     * Finds student in the database with the given ID
+     * @param id ID of the desired Student
+     * @return Student object with the given ID
+     */
     public Student getById(int id){
         try {
             PreparedStatement getAccount = connection.prepareStatement(
@@ -123,6 +165,9 @@ public class studentDAO {
         return null;
     }
 
+    /**
+     * disconnects from the database
+     */
     public void close() {
         try {
             connection.close();
