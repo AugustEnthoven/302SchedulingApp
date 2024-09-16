@@ -12,8 +12,6 @@ public class Schedule {
     private String className;
     private int time;
     private int preference;
-    private String DOB;
-    private String conditions;
 
     /**
      * Constructor for a schedule entry object.
