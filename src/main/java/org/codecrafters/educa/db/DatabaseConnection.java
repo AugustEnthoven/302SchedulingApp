@@ -12,8 +12,8 @@ public class DatabaseConnection {
         String url = "jdbc:sqlite:database.db";
         try {
             instance = DriverManager.getConnection(url);
-        } catch (SQLException sqlException) {
-            System.err.println(sqlException);
+        } catch (SQLException sqlEx) {
+            System.err.println(sqlEx);
         }
     }
 
