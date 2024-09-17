@@ -1,35 +1,40 @@
 package org.codecrafters.educa;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.codecrafters.educa.db.DatabaseConnection;
 import org.codecrafters.educa.models.user.UserDAO;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 public class App extends Application {
+    public static final int WIDTH = 600;
+    public static final int HEIGHT = 400;
+
     private static SceneManager sceneManager;
 
     private static UserDAO userDAO;
 
     public static UserDAO getUserDAO() { return userDAO; }
 
+    public static Stage getStage() { return sceneManager.getStage(); }
+
+    public static SceneManager getSceneManager() { return sceneManager; }
+
     @Override
     public void start(Stage stage) throws IOException {
-        // Create sceneManger to control switching scene
         sceneManager = new SceneManager(stage);
-        // Check if the stage is loaded correctly
-        Stage stage1 = sceneManager.getStage();
-        stage1.initStyle(StageStyle.UNDECORATED);
 
-        sceneManager.switchScene("home", "Home");
-        stage1.setTitle("Home");
-
-        stage1.show();
+        Stage thisStage = sceneManager.getStage();
+        thisStage.initStyle(StageStyle.UNDECORATED);
+        sceneManager.switchScene("studentProfile", "Student Profile");
+        thisStage.setTitle("Student Profile");
+        thisStage.show();
     }
     public static void main(String[] args) {
-        Connection connection = DatabaseConnection.getInstance();
+//        Connection connection = DatabaseConnection.getInstance();
+        launch();
     }
 }
