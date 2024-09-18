@@ -65,6 +65,11 @@ public class StudentViewController {
 
     @FXML
     protected void onDeleteButtonClick(){
-
+        if (selectedStudent != null){
+            studentDAO.delete(selectedStudent.getId());
+            selectedStudent = null;
+            StudentsTable.getItems().clear();
+            StudentsTable.getItems().setAll(studentDAO.getAll());
+        }
     }
 }

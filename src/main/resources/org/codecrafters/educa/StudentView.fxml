@@ -87,7 +87,7 @@
       <children>
             <Button fx:id="BackButton" layoutX="14.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Back" />
             <Button fx:id="EditButton" layoutX="304.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Edit" />
-            <Button fx:id="DeleteButton" layoutX="250.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Delete" />
+            <Button fx:id="DeleteButton" layoutX="250.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Delete" onAction="#onDeleteButtonClick" />
             <Button fx:id="NewButton" layoutX="574.0" layoutY="322.0" mnemonicParsing="false" onAction="#onNewButtonClick" prefHeight="25.0" prefWidth="53.0" text="New..." />
             <TableView fx:id="StudentsTable" onMouseClicked="#onCellClick" prefHeight="308.0" prefWidth="640.0">
               <columns>
