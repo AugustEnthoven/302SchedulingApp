@@ -23,7 +23,7 @@ public class StudentViewController {
     @FXML
     private Button NewButton;
     @FXML
-    private TableView StudentsTable;
+    private TableView<Student> StudentsTable;
     @FXML
     private TableColumn<Student, String> firstName;
     @FXML
@@ -34,6 +34,7 @@ public class StudentViewController {
     private TableColumn<Student, String> conditions;
 
     private StudentDAO studentDAO;
+    private Student selectedStudent;
     public StudentViewController(){
         studentDAO = new StudentDAO();
     }
@@ -54,5 +55,16 @@ public class StudentViewController {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("CreateStudent.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onCellClick(){
+        selectedStudent = StudentsTable.getSelectionModel().getSelectedItem();
+        System.out.println(selectedStudent.getFirstName());
+    }
+
+    @FXML
+    protected void onDeleteButtonClick(){
+
     }
 }
