@@ -1,0 +1,251 @@
+commit 24ea6e86d2e2d56869250b1f9b672ab98c05489b
+Merge: ea48ef1 1da6e89
+Author: Anh Nguyen <anh.nguyen762005@gmail.com>
+Date:   Wed Sep 18 09:25:32 2024 +1000
+
+    Merge pull request #1 from AugustEnthoven/ui
+    
+    UI
+
+commit 1da6e8907ba25aa07ab3923e926ea04e6f97b788
+Author: Anh Nguyen <anh.nguyen762005@gmail.com>
+Date:   Wed Sep 18 09:22:39 2024 +1000
+
+    start app with studentProfile screen
+
+commit aedfc9f3453d2fda2737b202cc1fd6b502c0abdc
+Author: dylan <bokitran@Bokis-MacBook-Air.local>
+Date:   Tue Sep 17 12:59:46 2024 +1000
+
+    first attempt for opening window
+
+commit d088e3abf3227e99b53e161bfb54eb1195c78b0f
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Mon Sep 16 20:32:46 2024 +1000
+
+    Created a schedule DAO
+
+commit 203ea1e6ec30c0db4644c6046f79e334ba8eec10
+Merge: ea48ef1 5f5091d
+Author: dylan <bokitran@Bokis-MacBook-Air.local>
+Date:   Mon Sep 16 18:08:33 2024 +1000
+
+    scene manager
+
+commit e5af8a31f99bb9b7fdc227193da6845964a57899
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Mon Sep 16 03:15:24 2024 +1000
+
+    Barebones new student GUI - can create a new student profile and add to the database
+
+commit ff05df1c1d0738b53d6593b70f7286c9005b53c4
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Mon Sep 16 00:31:14 2024 +1000
+
+    GUI start
+
+commit 51cf1c6128fcae76854316b7301524c644e2fa6f
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Sun Sep 15 16:43:53 2024 +1000
+
+    Created a schedule object
+
+commit fbcafa9233cb0ed558d36c52aa39b51f5e55838f
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Sun Sep 15 16:19:58 2024 +1000
+
+    Attempting to set up schedule DAO
+
+commit ea48ef12fd77ed33c1ea5de5396ad87973bfc919
+Merge: 7f8c997 50aca2f
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 22:54:10 2024 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 50aca2f35feffe13f74f78e593b431e46150bfe1
+Author: JaydenWilson547 <106229529+JaydenWilson547@users.noreply.github.com>
+Date:   Thu Sep 12 22:45:53 2024 +1000
+
+    Update maven.yml
+
+commit 76151b5567c6670b936348772e02220f639b6194
+Author: JaydenWilson547 <106229529+JaydenWilson547@users.noreply.github.com>
+Date:   Thu Sep 12 22:43:56 2024 +1000
+
+    Update maven.yml
+
+commit 7f8c9977aaad7efc3402ade0a48c6ee920bcbaf9
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 22:41:42 2024 +1000
+
+    Setting up Javadoc
+
+commit d0d634be438f75b0de02c23da73170a36276f093
+Author: JaydenWilson547 <106229529+JaydenWilson547@users.noreply.github.com>
+Date:   Thu Sep 12 22:33:28 2024 +1000
+
+    Create maven.yml
+    
+    Added Javadoc Generation and publishing steps
+
+commit cca3607c8570ab42095a303cff15ae0934e93c61
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 21:22:49 2024 +1000
+
+    Documentation and Unit tests
+
+commit 0d92c091b93e01bc452edf87dd61abc6994e7f92
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 21:21:44 2024 +1000
+
+    Documentation and Unit tests
+
+commit c72477c915ee87365bc47a715d3d25f76c15bb95
+Merge: cf6f661 0c85bd8
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 17:23:27 2024 +1000
+
+    Merge remote-tracking branch 'origin/StudentProfile' into StudentProfile
+    
+    # Conflicts:
+    #       database.db
+    #       src/main/java/org/codecrafters/educa/App.java
+    #       src/main/java/org/codecrafters/educa/db/StudentDAO.java
+    #       src/main/java/org/codecrafters/educa/profiles/Student.java
+
+commit cf6f6614fdf24a81c8390fc19c38325e226fd473
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 17:16:29 2024 +1000
+
+    Version problems now solved
+
+commit 772165181c6a00da0e27bf765d12256eb885dc98
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Wed Sep 11 16:00:43 2024 +1000
+
+    Documentation
+
+commit 0c85bd82d5b479e384b85d6125ea97bbd202f62d
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 17:09:03 2024 +1000
+
+    Version problems
+
+commit b7df59b483e20dcdac2e26822a68e49f9f47fd29
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 17:02:49 2024 +1000
+
+    documentation for StudentDAO and Student classes
+
+commit 3ff919141df5d0efffdac9f84bcef16a97692a97
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Thu Sep 12 17:02:02 2024 +1000
+
+    documentation for StudentDAO and Student classes
+
+commit 1a2c82213515d1f086d97e1016847e094f36a41e
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Wed Sep 11 18:07:25 2024 +1000
+
+    updated pom.xml and gitignore
+
+commit 37bb669dbd41e8d05ce81c773ca633ce5f623e6f
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Wed Sep 11 16:00:43 2024 +1000
+
+    Database Insertion - needs table formatting
+
+commit e9caeb4298e827b2fd8025fd34c68d5669c1773e
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Wed Sep 11 02:35:00 2024 +1000
+
+    Environment changes
+
+commit 4fef3415749b661eeda028ce2118c0a3c2cf34cb
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Wed Sep 11 02:31:39 2024 +1000
+
+    SudentDAO Class Created
+
+commit bcdb542cd69a99cb7641052e995c95dcef3da84e
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Wed Sep 11 01:34:33 2024 +1000
+
+    Student class created
+
+commit 9c35be3ec6ad9a790ed41bb491bcf53db3354bb3
+Author: Jayden <n10217011@qut.edu.au>
+Date:   Wed Sep 11 01:33:24 2024 +1000
+
+    Student class created
+
+commit 668d7a5321009f9591fdcc162c0b10c346f017e4
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Tue Sep 10 18:48:41 2024 +1000
+
+    Added my database as commands in a .txt file
+
+commit 5f5091d9f7792e20bbeee2575f9911323b0d7a4b
+Author: Anh Nguyen <anh.nguyen762005@gmail.com>
+Date:   Mon Sep 9 17:42:04 2024 +1000
+
+    add register/login features
+
+commit 1abbbb5b869098443e9c4905adf78dbf5401fd37
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Mon Sep 9 16:11:34 2024 +1000
+
+    Updating db
+
+commit fb2412b4d00197d9c70695cd16c9f33cb0be3c8f
+Author: Anh Nguyen <anh.nguyen762005@gmail.com>
+Date:   Mon Sep 9 15:48:32 2024 +1000
+
+    databaseConnection implementation
+
+commit d57fc553b645ab475006d91987fc35f3c588513c
+Author: Anh Nguyen <anh.nguyen762005@gmail.com>
+Date:   Mon Sep 9 15:21:38 2024 +1000
+
+    rename app structure
+
+commit 28521106c6b188e5ab1a347c558c9d5b8e36b969
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Wed Sep 4 19:52:26 2024 +1000
+
+    Changed table User to Users
+
+commit 0a2299f271ef8d8df2c038e0adb67c4d98f2a75a
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Wed Sep 4 19:46:42 2024 +1000
+
+    Made some changes to the database
+
+commit 911ec3084684970d58d70a3c4c5a0be2b58784e9
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Wed Sep 4 19:10:48 2024 +1000
+
+    Create database.sqbpro
+    
+    Adding auto created file database.sqbpro
+
+commit c0db8d992135ebc946b3be2d98170e12e5660821
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Wed Sep 4 19:07:57 2024 +1000
+
+    Database is partly done
+    
+    Students, Notes, Teachers, Parents and Connections tables have been added
+
+commit ee6447195e3eeca5ae5048bb24e2d3fd7ae56b03
+Author: AugustEnthoven <n11138947@qut.edu.au>
+Date:   Wed Sep 4 18:30:54 2024 +1000
+
+    Created Database
+
+commit 704d2b7311d1b7c37059dbd5b08ba61b5dda2450
+Author: Anh Nguyen <anh.nguyen762005@gmail.com>
+Date:   Wed Aug 21 18:15:25 2024 +1000
+
+    javafx application backbone
