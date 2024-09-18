@@ -21,16 +21,16 @@ public class Student {
      * @param id The Student's ID number
      * @param firstName The Student's First Name
      * @param lastName The Student's Surname
-     * @param age The Student's age
      * @param DOB The Student's Date of Birth in dd/mm/yyyy format
      * @param conditions The Student's listed conditions
      */
-    public Student(int id, String firstName, String lastName, int age, String DOB, String conditions){
+    public Student(int id, String firstName, String lastName, String DOB, String conditions){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.DOB = DOB;
-        this.age = age;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.age = Period.between(LocalDate.parse(DOB, formatter), LocalDate.now()).getYears();
         this.conditions = conditions;
     }
 

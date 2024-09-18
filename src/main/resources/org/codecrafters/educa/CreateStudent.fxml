@@ -87,11 +87,11 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
             <Button fx:id="createStudentButton" disable="true" layoutX="457.0" layoutY="322.0" mnemonicParsing="false" onAction="#onCreateStudentClick" text="Create Profile" />
+            <TextField fx:id="firstNameTextField" layoutX="94.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
+            <TextField fx:id="lastNameTextField" layoutX="320.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
+            <TextField fx:id="dobTextField" layoutX="94.0" layoutY="187.0" onKeyTyped="#onStudentFieldEdit" />
             <TextField fx:id="conditionsTextField" alignment="TOP_LEFT" layoutX="94.0" layoutY="249.0" onAction="#onStudentFieldEdit" onKeyTyped="#onStudentFieldEdit" prefHeight="61.0" prefWidth="451.0" />
             <Label layoutX="94.0" layoutY="231.0" text="Conditions" />
-            <TextField fx:id="lastNameTextField" layoutX="320.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
-            <TextField fx:id="firstNameTextField" layoutX="94.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
-            <TextField fx:id="dobTextField" layoutX="94.0" layoutY="187.0" onKeyTyped="#onStudentFieldEdit" />
             <Label layoutX="94.0" layoutY="111.0" text="First Name" />
             <Label layoutX="320.0" layoutY="111.0" text="Surname" />
             <Label layoutX="94.0" layoutY="169.0" text="Date of Birth" />

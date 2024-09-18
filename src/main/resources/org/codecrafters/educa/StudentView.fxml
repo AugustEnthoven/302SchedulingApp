@@ -86,8 +86,8 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="288.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
             <Button fx:id="BackButton" layoutX="14.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Back" />
-            <Button fx:id="EditButton" layoutX="304.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Edit" />
-            <Button fx:id="DeleteButton" layoutX="250.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Delete" onAction="#onDeleteButtonClick" />
+            <Button fx:id="EditButton" layoutX="293.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Edit" onAction="#onEditButtonClick" />
+            <Button fx:id="DeleteButton" layoutX="239.0" layoutY="322.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="25.0" prefWidth="53.0" text="Delete" />
             <Button fx:id="NewButton" layoutX="574.0" layoutY="322.0" mnemonicParsing="false" onAction="#onNewButtonClick" prefHeight="25.0" prefWidth="53.0" text="New..." />
             <TableView fx:id="StudentsTable" onMouseClicked="#onCellClick" prefHeight="308.0" prefWidth="640.0">
               <columns>
@@ -97,6 +97,7 @@
                   <TableColumn fx:id="conditions" prefWidth="320.0" text="Conditions" />
               </columns>
             </TableView>
+            <Button layoutX="347.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="View" onAction="#onViewButtonClick" />
       </children>
     </AnchorPane>
   </children>

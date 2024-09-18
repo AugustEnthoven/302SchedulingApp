@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class CreateStudentController {
+public class EditStudentController {
     @FXML
-    private Button createStudentButton;
+    private Button SubmitButton;
     @FXML
     private Button BackButton;
     @FXML
@@ -27,14 +27,24 @@ public class CreateStudentController {
     @FXML
     private TextField conditionsTextField;
 
+    private Student selectedStudent;
     private StudentDAO studentDAO;
-    public CreateStudentController(){
+    public EditStudentController(){
         studentDAO = new StudentDAO();
+        selectedStudent = App.selectedStudent;
+    }
+
+    @FXML
+    public void initialize(){
+        firstNameTextField.setText(selectedStudent.getFirstName());
+        lastNameTextField.setText(selectedStudent.getLastName());
+        dobTextField.setText(selectedStudent.getDOB());
+        conditionsTextField.setText(selectedStudent.getConditions());
     }
 
     /**
-     * Runs on any changes to any text field. If all fields have valid values, will enable
-     * the create button
+     * Runs on any changes to any text field. If all fields have valid values and have
+     * changed from the initial values, will enable the create button
      */
     @FXML
     protected void onStudentFieldEdit(){
@@ -44,27 +54,28 @@ public class CreateStudentController {
             LocalDate.parse(dobTextField.getText(), formatter);
             validDate = true;
         } catch(Exception e){validDate = false;}
-        createStudentButton.setDisable(!(!firstNameTextField.getText().isEmpty() & !lastNameTextField.getText().isEmpty() &
+        SubmitButton.setDisable(!(!firstNameTextField.getText().isEmpty() & !lastNameTextField.getText().isEmpty() &
                 !dobTextField.getText().isEmpty() & !conditionsTextField.getText().isEmpty() & validDate));
     }
 
     /**
-     * Inserts the respective student information into a new entry in the database and
+     * Updates the respective student information in the database and
      * returns to the student view screen
      * @throws IOException
      */
     @FXML
-    protected void onCreateStudentClick() throws IOException{
+    protected void onSubmitClick() throws IOException{
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
         String dob = dobTextField.getText();
         String conditions = conditionsTextField.getText();
-        studentDAO.insert(new Student(firstName, lastName, dob, conditions));
+        studentDAO.update(new Student(selectedStudent.getId(), firstName, lastName, dob, conditions));
 
         Stage stage = (Stage) BackButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("StudentView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setScene(scene);
+        App.selectedStudent = null;
     }
 
     /**

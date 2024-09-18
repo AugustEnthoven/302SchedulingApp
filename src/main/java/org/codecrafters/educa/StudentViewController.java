@@ -34,7 +34,7 @@ public class StudentViewController {
     private TableColumn<Student, String> conditions;
 
     private StudentDAO studentDAO;
-    private Student selectedStudent;
+    private Student selectedStudent = App.selectedStudent;
     public StudentViewController(){
         studentDAO = new StudentDAO();
     }
@@ -58,9 +58,19 @@ public class StudentViewController {
     }
 
     @FXML
+    protected void onEditButtonClick() throws IOException{
+        if (App.selectedStudent != null) {
+            Stage stage = (Stage) BackButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("EditStudent.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 640, 480);
+            stage.setScene(scene);
+        }
+    }
+
+    @FXML
     protected void onCellClick(){
         selectedStudent = StudentsTable.getSelectionModel().getSelectedItem();
-        System.out.println(selectedStudent.getFirstName());
+        App.selectedStudent = selectedStudent;
     }
 
     @FXML
@@ -71,5 +81,10 @@ public class StudentViewController {
             StudentsTable.getItems().clear();
             StudentsTable.getItems().setAll(studentDAO.getAll());
         }
+    }
+
+    @FXML
+    protected void onViewButtonClick(){
+        //Insert Dylan's GUI here
     }
 }
