@@ -17,9 +17,9 @@ public class UserDAO {
                     "CREATE TABLE IF NOT EXISTS Users ("
                             + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "email VARCHAR NOT NULL UNIQUE, "
-                            + "role VARCHAR NOT NULL"
+                            + "role VARCHAR NOT NULL, "
                             + "username VARCHAR NOT NULL, "
-                            + "password VARCHAR NOT NULL, "
+                            + "password VARCHAR NOT NULL "
                             + ")"
             );
         } catch (SQLException exception) {

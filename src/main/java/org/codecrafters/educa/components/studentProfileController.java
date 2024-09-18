@@ -28,7 +28,7 @@ public class studentProfileController {
         SceneManager sceneManager = App.getSceneManager();
 
         sceneManager.switchScene("home", "Home");
-        stage.setTitle("Home");
+        stage.setTitle("EduCalendar - Home");
     };
 
 }
