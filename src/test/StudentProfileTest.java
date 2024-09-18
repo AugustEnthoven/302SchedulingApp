@@ -3,16 +3,9 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
-    Student student_1;
-    Student student_2;
-    Student student_3;
-
-    @BeforeEach
-    void setup(){
-        Student student_1 = new Student("Rick", "Astley", "22/10/2000", "Wicked Prankster");
-        Student student_2 = new Student("Benjamin", "Button", "01/01/2024", "Very Young");
-        Student student_3 = new Student("Mr", "Dr", "20/11/2025", "Doesn't exist yet");
-    }
+    Student student_1 = new Student("Rick", "Astley", "22/08/2000", "Wicked Prankster");;
+    Student student_2 = new Student("Benjamin", "Button", "01/01/2024", "Very Young");
+    Student student_3 = new Student("Mr", "Dr", "20/11/2025", "Doesn't exist yet");
 
     @Test
     void testAge(){

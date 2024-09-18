@@ -6,4 +6,5 @@ module org.codecrafters.educa {
 
     opens org.codecrafters.educa to javafx.fxml;
     exports org.codecrafters.educa;
+    exports org.codecrafters.educa.profiles;
 }
