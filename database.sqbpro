@@ -13,17 +13,7 @@ CREATE TABLE &quot;Notes&quot; (
     Date TEXT,                                                                                        
     Contents TEXT                                                                                     
 );                                                                                                    
-                                                                                                      
-CREATE TABLE &quot;Users&quot; (                                                                                
-    ID INT,                                                                                           
-    LastName TEXT,                                                                                    
-    FirstName TEXT,                                                                                   
-    PhoneNumber INT,                                                                                  
-    Email TEXT,                                                                                       
-    Type INT,                                                                                         
-    Salt INT,                                                                                         
-    HashedSaltedPassword TEXT                                                                         
-);                                                                                                    
+
                                                                                                       
 CREATE TABLE &quot;Connections&quot; (                                                                          
     AdultID INT,                                                                                      
@@ -34,8 +24,8 @@ CREATE TABLE &quot;Connections&quot; (
 CREATE TABLE &quot;Classes&quot; (                                                                              
     ID INT,                                                                                           
     Name TEXT                                                                                         
-);                                                                                                    
-                                                                                                      
+);
+
 CREATE TABLE &quot;StudentClasses&quot; (                                                                       
     StudentID INT,                                                                                    
     ClassID INT,                                                                                      
