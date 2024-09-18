@@ -3,6 +3,7 @@ package org.codecrafters.educa.db;
 import org.codecrafters.educa.profiles.Schedule;
 import org.codecrafters.educa.profiles.Student;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -136,6 +137,37 @@ public class ScheduleDAO {
         try {
             Statement getAll = connection.createStatement();
             ResultSet rs = getAll.executeQuery("SELECT * FROM schedules");
+            while (rs.next()){
+                schedules.add(
+                        new Schedule(
+                                rs.getInt("studentID"),
+                                rs.getString("className"),
+                                rs.getInt("time"),
+                                rs.getInt("preference")
+                        )
+                );
+            }
+        } catch (SQLException ex){
+            System.err.println(ex);
+        }
+        return schedules;
+    }
+
+    /**
+     * A function for returning a list of all schedule entries for one student
+     * @return List object containing all schedule entries in the database for one student
+     */
+    public List<Schedule> getStudentSchedule(int studentID) {
+        List<Schedule> schedules = new ArrayList<>();
+        try {
+
+            PreparedStatement getStudentSchedule = connection.prepareStatement(
+                    "SELECT * FROM schedules WHERE studentID = ?"
+            );
+            getStudentSchedule.setInt(1,studentID);
+
+            ResultSet rs = getStudentSchedule.executeQuery();
+
             while (rs.next()){
                 schedules.add(
                         new Schedule(
