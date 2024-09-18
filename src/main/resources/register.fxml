@@ -68,17 +68,6 @@
                <Insets left="145.0" right="145.0" />
             </VBox.margin>
          </HBox>
-          <PasswordField fx:id="confirmPasswordField" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="270.0" promptText="confirm password">
-              <VBox.margin>
-                  <Insets top="10.0" />
-              </VBox.margin>
-              <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-              </cursor>
-              <padding>
-                  <Insets bottom="3.0" left="15.0" right="15.0" />
-              </padding>
-          </PasswordField>
           <PasswordField fx:id="passwordField" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="270.0" promptText="password">
               <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
@@ -86,6 +75,17 @@
               <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
               </VBox.margin>
+              <padding>
+                  <Insets bottom="3.0" left="15.0" right="15.0" />
+              </padding>
+          </PasswordField>
+          <PasswordField fx:id="confirmPasswordField" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="270.0" promptText="confirm password">
+              <VBox.margin>
+                  <Insets top="10.0" />
+              </VBox.margin>
+              <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+              </cursor>
               <padding>
                   <Insets bottom="3.0" left="15.0" right="15.0" />
               </padding>
