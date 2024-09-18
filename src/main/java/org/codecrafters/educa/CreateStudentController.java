@@ -15,9 +15,9 @@ import java.time.format.DateTimeFormatter;
 
 public class CreateStudentController {
     @FXML
-    public Button createStudentButton;
+    private Button createStudentButton;
     @FXML
-    public Button BackButton;
+    private Button BackButton;
     @FXML
     private TextField firstNameTextField;
     @FXML

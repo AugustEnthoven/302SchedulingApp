@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.codecrafters.educa.db.StudentDAO;
 import org.codecrafters.educa.profiles.Student;
@@ -14,22 +15,38 @@ import java.io.IOException;
 
 public class StudentViewController {
     @FXML
-    public Button BackButton;
+    private Button BackButton;
     @FXML
-    public Button EditButton;
+    private Button EditButton;
     @FXML
-    public Button DeleteButton;
+    private Button DeleteButton;
     @FXML
-    public Button NewButton;
+    private Button NewButton;
     @FXML
-    public TableView StudentsTable;
+    private TableView StudentsTable;
+    @FXML
+    private TableColumn<Student, String> firstName;
+    @FXML
+    private TableColumn<Student, String> lastName;
+    @FXML
+    private TableColumn<Student, String> age;
+    @FXML
+    private TableColumn<Student, String> conditions;
 
     private StudentDAO studentDAO;
     public StudentViewController(){
         studentDAO = new StudentDAO();
     }
 
+    @FXML
+    public void initialize(){
+        firstName.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
+        lastName.setCellValueFactory(new PropertyValueFactory<Student, String>("lastName"));
+        age.setCellValueFactory(new PropertyValueFactory<Student, String>("age"));
+        conditions.setCellValueFactory(new PropertyValueFactory<Student, String>("conditions"));
 
+        StudentsTable.getItems().setAll(studentDAO.getAll());
+    }
 
     @FXML
     protected void onNewButtonClick() throws IOException {

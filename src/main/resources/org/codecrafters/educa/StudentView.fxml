@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.StudentViewController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -88,13 +88,13 @@
             <Button fx:id="BackButton" layoutX="14.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Back" />
             <Button fx:id="EditButton" layoutX="304.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Edit" />
             <Button fx:id="DeleteButton" layoutX="250.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Delete" />
-            <Button fx:id="NewButton" layoutX="574.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="New..." />
+            <Button fx:id="NewButton" layoutX="574.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="New..." onAction="#onNewButtonClick" />
             <TableView fx:id="StudentsTable" prefHeight="308.0" prefWidth="640.0">
               <columns>
-                <TableColumn minWidth="20.0" prefWidth="103.99996948242188" text="First Name" />
-                <TableColumn prefWidth="104.66665649414062" text="Last Name" />
-                  <TableColumn prefWidth="109.3333740234375" text="Age" />
-                  <TableColumn prefWidth="320.0" text="Conditions" />
+                <TableColumn fx:id="firstName" minWidth="20.0" prefWidth="103.99996948242188" text="First Name" />
+                <TableColumn fx:id="lastName" prefWidth="104.66665649414062" text="Last Name" />
+                  <TableColumn fx:id="age" prefWidth="109.3333740234375" text="Age" />
+                  <TableColumn fx:id="conditions" prefWidth="320.0" text="Conditions" />
               </columns>
             </TableView>
       </children>
