@@ -43,8 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml"
-    fx:controller="org.codecrafters.educa.AppController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.AppController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -87,12 +86,12 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button layoutX="457.0" layoutY="322.0" mnemonicParsing="false" text="Create Profile" onAction="#onCreateStudentClick"/>
-            <TextField layoutX="94.0" layoutY="249.0" prefHeight="61.0" prefWidth="451.0" fx:id="conditionsTextField"/>
+            <Button fx:id="createStudentButton" disable="true" layoutX="457.0" layoutY="322.0" mnemonicParsing="false" onAction="#onCreateStudentClick" text="Create Profile" />
+            <TextField fx:id="conditionsTextField" alignment="TOP_LEFT" layoutX="94.0" layoutY="249.0" onAction="#onStudentFieldEdit" onKeyTyped="#onStudentFieldEdit" prefHeight="61.0" prefWidth="451.0" />
             <Label layoutX="94.0" layoutY="231.0" text="Conditions" />
-            <TextField layoutX="320.0" layoutY="128.0" fx:id="lastNameTextField"/>
-            <TextField layoutX="94.0" layoutY="128.0" fx:id="firstNameTextField"/>
-            <TextField layoutX="94.0" layoutY="187.0" fx:id="dobTextField"/>
+            <TextField fx:id="lastNameTextField" layoutX="320.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
+            <TextField fx:id="firstNameTextField" layoutX="94.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
+            <TextField fx:id="dobTextField" layoutX="94.0" layoutY="187.0" onKeyTyped="#onStudentFieldEdit" />
             <Label layoutX="94.0" layoutY="111.0" text="First Name" />
             <Label layoutX="320.0" layoutY="111.0" text="Surname" />
             <Label layoutX="94.0" layoutY="169.0" text="Date of Birth" />
@@ -101,6 +100,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
+            <Button layoutX="402.0" layoutY="322.0" mnemonicParsing="false" text="Back" />
       </children>
     </AnchorPane>
   </children>
