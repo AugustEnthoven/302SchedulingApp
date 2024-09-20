@@ -1,0 +1,51 @@
+CREATE TABLE "Students" (
+    LastName TEXT,
+    FirstName TEXT,
+    Age INT,
+    Birthday TEXT,
+    Conditions TEXT,
+    ID INT
+);
+
+CREATE TABLE "Notes" (
+    StudentID INT,
+	CreatorID INT,
+    Date TEXT,
+    Contents TEXT
+);
+
+CREATE TABLE "Users" (
+    ID INT,
+    LastName TEXT,
+    FirstName TEXT,
+	PhoneNumber INT,
+	Email TEXT,
+	Type INT,
+	Salt INT,
+	HashedSaltedPassword TEXT
+);
+
+CREATE TABLE "Connections" (
+    AdultID INT,
+    StudentID INT,
+	Connection TEXT
+);
+
+CREATE TABLE "Classes" (
+	ID INT,
+	Name TEXT
+);
+
+CREATE TABLE "StudentClasses" (
+	StudentID INT,
+	ClassID INT,
+	ClassTime INT,
+	Preference INT,
+	Grade INT
+);
+
+CREATE TABLE "TeacherSchedule" (
+	TeacherID INT,
+	StudentID INT,
+	TimeSlot INT
+);
