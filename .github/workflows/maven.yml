@@ -15,6 +15,11 @@ on:
     branches: [ "integration" ]
 
 jobs:
+  job-name:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
   build:
 
     runs-on: ubuntu-latest
