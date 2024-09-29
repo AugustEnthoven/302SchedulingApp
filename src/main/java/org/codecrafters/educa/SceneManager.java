@@ -46,7 +46,7 @@ public class SceneManager {
             // Create new scene
             try {
                 // Get file path of the FXML file from sceneId
-                String fxml = "/" + sceneId + ".fxml";
+                String fxml = sceneId + ".fxml";
 //                // Load CSS stylesheet for the scene
 //                String css = Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm();
                 // Create FXMLLoader to run FXML file
