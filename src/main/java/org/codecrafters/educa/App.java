@@ -11,11 +11,11 @@ import org.codecrafters.educa.profiles.Student;
 import java.io.IOException;
 
 public class App extends Application {
-    public static final int WIDTH = 600;
+    public static final int WIDTH = 640;
     public static final int HEIGHT = 400;
     public static Student selectedStudent;
 
-    private static SceneManager sceneManager;
+    public static SceneManager sceneManager;
 
     private static UserDAO userDAO;
 
@@ -31,9 +31,7 @@ public class App extends Application {
         selectedStudent = null;
 
         Stage thisStage = sceneManager.getStage();
-        thisStage.initStyle(StageStyle.UNDECORATED);
-        sceneManager.switchScene("studentProfile", "Student Profile");
-        thisStage.setTitle("Student Profile");
+        sceneManager.switchScene("studentView", "Student View");
         thisStage.show();
     }
     public static void main(String[] args) {

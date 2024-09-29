@@ -38,9 +38,12 @@ public class StudentViewController {
     public StudentViewController(){
         studentDAO = new StudentDAO();
     }
+    public SceneManager sceneManager;
 
     @FXML
     public void initialize(){
+        sceneManager = App.sceneManager;
+
         firstName.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
         lastName.setCellValueFactory(new PropertyValueFactory<Student, String>("lastName"));
         age.setCellValueFactory(new PropertyValueFactory<Student, String>("age"));
@@ -51,19 +54,17 @@ public class StudentViewController {
 
     @FXML
     protected void onNewButtonClick() throws IOException {
-        Stage stage = (Stage) BackButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("CreateStudent.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setScene(scene);
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("CreateStudent", "CreateStudent");
+        thisStage.show();
     }
 
     @FXML
     protected void onEditButtonClick() throws IOException{
         if (App.selectedStudent != null) {
-            Stage stage = (Stage) BackButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("EditStudent.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-            stage.setScene(scene);
+            Stage thisStage = sceneManager.getStage();
+            sceneManager.switchScene("EditStudent", "Edit " + selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s Profile");
+            thisStage.show();
         }
     }
 
@@ -85,6 +86,10 @@ public class StudentViewController {
 
     @FXML
     protected void onViewButtonClick(){
-        //Insert Dylan's GUI here
+        if (App.selectedStudent != null) {
+            Stage thisStage = sceneManager.getStage();
+            sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
+            thisStage.show();
+        }
     }
 }
