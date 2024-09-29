@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.StudentViewController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.StudentViewController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -86,7 +86,7 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="288.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
             <Button fx:id="BackButton" layoutX="14.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Back" />
-            <Button fx:id="EditButton" layoutX="293.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Edit" onAction="#onEditButtonClick" />
+            <Button fx:id="EditButton" layoutX="293.0" layoutY="322.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="25.0" prefWidth="53.0" text="Edit" />
             <Button fx:id="DeleteButton" layoutX="239.0" layoutY="322.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="25.0" prefWidth="53.0" text="Delete" />
             <Button fx:id="NewButton" layoutX="574.0" layoutY="322.0" mnemonicParsing="false" onAction="#onNewButtonClick" prefHeight="25.0" prefWidth="53.0" text="New..." />
             <TableView fx:id="StudentsTable" onMouseClicked="#onCellClick" prefHeight="308.0" prefWidth="640.0">
@@ -97,7 +97,7 @@
                   <TableColumn fx:id="conditions" prefWidth="320.0" text="Conditions" />
               </columns>
             </TableView>
-            <Button layoutX="347.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="View" onAction="#onViewButtonClick" />
+            <Button layoutX="347.0" layoutY="322.0" mnemonicParsing="false" onAction="#onViewButtonClick" prefHeight="25.0" prefWidth="53.0" text="View" />
       </children>
     </AnchorPane>
   </children>

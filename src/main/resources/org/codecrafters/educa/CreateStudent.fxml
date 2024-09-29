@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.CreateStudentController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.CreateStudentController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -100,7 +100,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button fx:id="BackButton" layoutX="402.0" layoutY="322.0" mnemonicParsing="false" text="Back" onAction="#onBackButtonClick" />
+            <Button fx:id="BackButton" layoutX="402.0" layoutY="322.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
       </children>
     </AnchorPane>
   </children>

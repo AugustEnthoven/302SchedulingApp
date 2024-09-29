@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Class for creating a Student Database Access Object
  */
-public class StudentDAO {
+public class StudentDAO implements IStudentDAO {
     private Connection connection;
 
     /**
