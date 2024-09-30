@@ -17,6 +17,8 @@ public class App extends Application {
 
     public static SceneManager sceneManager;
 
+    public static boolean viewingProfile;
+
     private static UserDAO userDAO;
 
     public static UserDAO getUserDAO() { return userDAO; }
@@ -29,6 +31,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         sceneManager = new SceneManager(stage);
         selectedStudent = null;
+        viewingProfile = false;
 
         Stage thisStage = sceneManager.getStage();
         sceneManager.switchScene("studentView", "Student View");

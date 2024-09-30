@@ -90,6 +90,7 @@ public class StudentViewController {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
             thisStage.show();
+            App.viewingProfile = true;
         }
     }
 }
