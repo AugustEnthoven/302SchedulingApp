@@ -1,8 +1,6 @@
 package org.codecrafters.educa;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -29,16 +27,16 @@ public class EditStudentController {
 
     private Student selectedStudent;
     private StudentDAO studentDAO;
+    public SceneManager sceneManager;
+
     public EditStudentController(){
         studentDAO = new StudentDAO();
         selectedStudent = App.selectedStudent;
+        sceneManager = App.sceneManager;
     }
-    public SceneManager sceneManager;
 
     @FXML
     public void initialize(){
-        sceneManager = App.sceneManager;
-
         firstNameTextField.setText(selectedStudent.getFirstName());
         lastNameTextField.setText(selectedStudent.getLastName());
         dobTextField.setText(selectedStudent.getDOB());
@@ -86,9 +84,15 @@ public class EditStudentController {
      */
     @FXML
     protected void onBackButtonClick() throws IOException {
-        Stage thisStage = sceneManager.getStage();
-        sceneManager.switchScene("studentView", "Student View");
-        thisStage.show();
-        App.selectedStudent = null;
+        if (App.viewingProfile){
+            Stage thisStage = sceneManager.getStage();
+            sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
+            thisStage.show();
+        } else {
+            Stage thisStage = sceneManager.getStage();
+            sceneManager.switchScene("studentView", "Student View");
+            thisStage.show();
+            App.selectedStudent = null;
+        }
     }
 }
