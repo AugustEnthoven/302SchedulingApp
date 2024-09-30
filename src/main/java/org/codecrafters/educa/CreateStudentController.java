@@ -28,8 +28,10 @@ public class CreateStudentController {
     private TextField conditionsTextField;
 
     private StudentDAO studentDAO;
+    public SceneManager sceneManager;
     public CreateStudentController(){
         studentDAO = new StudentDAO();
+        sceneManager = App.sceneManager;
     }
 
     /**
@@ -61,10 +63,9 @@ public class CreateStudentController {
         String conditions = conditionsTextField.getText();
         studentDAO.insert(new Student(firstName, lastName, dob, conditions));
 
-        Stage stage = (Stage) BackButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("StudentView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setScene(scene);
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("studentView", "Student View");
+        thisStage.show();
     }
 
     /**
@@ -73,10 +74,9 @@ public class CreateStudentController {
      */
     @FXML
     protected void onBackButtonClick() throws IOException {
-        Stage stage = (Stage) BackButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("StudentView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setScene(scene);
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("studentView", "Student View");
+        thisStage.show();
         App.selectedStudent = null;
     }
 }
