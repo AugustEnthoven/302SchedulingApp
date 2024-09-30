@@ -72,10 +72,16 @@ public class EditStudentController {
         String conditions = conditionsTextField.getText();
         studentDAO.update(new Student(selectedStudent.getId(), firstName, lastName, dob, conditions));
 
-        Stage thisStage = sceneManager.getStage();
-        sceneManager.switchScene("studentView", "Student View");
-        thisStage.show();
-        App.selectedStudent = null;
+        if (App.viewingProfile){
+            Stage thisStage = sceneManager.getStage();
+            sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
+            thisStage.show();
+        } else {
+            Stage thisStage = sceneManager.getStage();
+            sceneManager.switchScene("studentView", "Student View");
+            thisStage.show();
+            App.selectedStudent = null;
+        }
     }
 
     /**
