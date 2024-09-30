@@ -33,7 +33,7 @@ public class SceneManager {
         // Get scene from sceneId
         Scene scene = scenes.get(sceneId);
         // Set scene title
-        stage.get().setTitle("EduCalendar" + title);
+        stage.get().setTitle("EduCalendar " + title);
 
         if (scene != null){
             // Push old scene to the stack
@@ -46,13 +46,13 @@ public class SceneManager {
             // Create new scene
             try {
                 // Get file path of the FXML file from sceneId
-                String fxml = "/" + sceneId + ".fxml";
+                String fxml = sceneId + ".fxml";
 //                // Load CSS stylesheet for the scene
 //                String css = Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm();
                 // Create FXMLLoader to run FXML file
                 FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml));
                 // Load the FXML file and create new scene
-                Scene newScene = new Scene(loader.load(), 600, 400);
+                Scene newScene = new Scene(loader.load(), App.WIDTH, App.HEIGHT);
 //                // Add stylesheet for new scene
 //                newScene.getStylesheets().add(css);
                 // Push the old scene to the stack

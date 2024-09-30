@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Class for creating a Student Database Access Object
  */
-public class StudentDAO {
+public class StudentDAO implements IStudentDAO {
     private Connection connection;
 
     /**
@@ -81,13 +81,14 @@ public class StudentDAO {
         try{
             PreparedStatement updateAccount = connection.prepareStatement(
                     "UPDATE students SET firstName = ?, lastName = ?, " +
-                            "age = ?, dob = ?, conditions = ?"
+                            "age = ?, dob = ?, conditions = ? WHERE id = ?"
             );
             updateAccount.setString(1, student.getFirstName());
             updateAccount.setString(2, student.getLastName());
             updateAccount.setInt(3, student.getAge());
             updateAccount.setString(4, student.getDOB());
             updateAccount.setString(5, student.getConditions());
+            updateAccount.setInt(6, student.getId());
             updateAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);
@@ -125,7 +126,6 @@ public class StudentDAO {
                                 rs.getInt("id"),
                                 rs.getString("firstName"),
                                 rs.getString("lastName"),
-                                rs.getInt("age"),
                                 rs.getString("dob"),
                                 rs.getString("conditions")
                         )
@@ -154,7 +154,6 @@ public class StudentDAO {
                         rs.getInt("id"),
                         rs.getString("firstName"),
                         rs.getString("lastName"),
-                        rs.getInt("age"),
                         rs.getString("dob"),
                         rs.getString("conditions")
                 );
