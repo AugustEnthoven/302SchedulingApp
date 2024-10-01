@@ -17,6 +17,7 @@ public class StudentDAO implements IStudentDAO {
      */
     public StudentDAO(){
         connection = DatabaseConnection.getInstance();
+        createTable();
     }
 
     /**

@@ -11,4 +11,5 @@ module org.codecrafters.educa {
     exports org.codecrafters.educa.components;
     opens org.codecrafters.educa.profiles to javafx.fxml;
     exports org.codecrafters.educa.profiles;
+    exports org.codecrafters.educa.db;
 }
