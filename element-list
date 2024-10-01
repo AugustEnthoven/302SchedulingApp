@@ -1,4 +1,5 @@
 module:org.codecrafters.educa
 org.codecrafters.educa
 org.codecrafters.educa.components
+org.codecrafters.educa.db
 org.codecrafters.educa.profiles
