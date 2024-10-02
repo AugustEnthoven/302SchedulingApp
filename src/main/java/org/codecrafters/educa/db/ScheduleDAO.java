@@ -153,6 +153,37 @@ public class ScheduleDAO {
     }
 
     /**
+     * A function for returning a list of all schedule entries for one student
+     * @return List object containing all schedule entries in the database for one student
+     */
+    public List<Schedule> getStudentSchedule(int studentID) {
+        List<Schedule> schedules = new ArrayList<>();
+        try {
+
+            PreparedStatement getStudentSchedule = connection.prepareStatement(
+                    "SELECT * FROM schedules WHERE studentID = ?"
+            );
+            getStudentSchedule.setInt(1,studentID);
+
+            ResultSet rs = getStudentSchedule.executeQuery();
+
+            while (rs.next()){
+                schedules.add(
+                        new Schedule(
+                                rs.getInt("studentID"),
+                                rs.getString("className"),
+                                rs.getInt("time"),
+                                rs.getInt("preference")
+                        )
+                );
+            }
+        } catch (SQLException ex){
+            System.err.println(ex);
+        }
+        return schedules;
+    }
+
+    /**
      * Finds schedule in the database with the given student ID and time
      * @param studentID The id of the student the schedule entry is associated with
      * @param time The time the class takes place in
