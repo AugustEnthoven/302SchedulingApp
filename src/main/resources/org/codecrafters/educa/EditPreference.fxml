@@ -32,16 +32,14 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.EditStudentController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.EditPreferenceController">
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
@@ -55,28 +53,7 @@
                 <Button fx:id="BackButton" layoutX="402.0" layoutY="322.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
             <Label layoutX="300.0" layoutY="111.0" text="Preference" />
             <ChoiceBox fx:id="ClassDropdown" layoutX="94.0" layoutY="134.0" prefWidth="150.0" />
-            <DropdownButton layoutX="107.0" layoutY="167.0">
-                <items>
-                    <MenuItem text="Choose a class" />
-                  <MenuItem text="English" />
-                    <MenuItem text="History" />
-                    <MenuItem text="Math" />
-                  <MenuItem text="Science" />
-                  <MenuItem text="Spanish" />
-                  <MenuItem text="PE" />
-                </items>
-            </DropdownButton>
-            <ChoiceBox fx:id="ClassDropdown1" layoutX="300.0" layoutY="134.0" prefWidth="150.0" />
-            <DropdownButton layoutX="312.0" layoutY="167.0">
-               <items>
-                  <MenuItem text="Set a preference" />
-                  <MenuItem text="1" />
-                  <MenuItem text="2" />
-                  <MenuItem text="3" />
-                  <MenuItem text="4" />
-                  <MenuItem text="5" />
-               </items>
-            </DropdownButton>
+            <ChoiceBox fx:id="PreferenceDropDown" layoutX="300.0" layoutY="134.0" prefWidth="150.0" />
             </children>
         </AnchorPane>
     </children>
