@@ -9,5 +9,5 @@ public interface NotesDAO {
     void deleteNote(Note note);
     void updateNote(Note note);
     List<Note> getAll();
-    List<Note> getNotesById();
+    List<Note> getNotesByStudentId(int studentId);
 }
