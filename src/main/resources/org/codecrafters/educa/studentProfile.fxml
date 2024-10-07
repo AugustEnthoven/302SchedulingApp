@@ -3,14 +3,16 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="studentProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.components.studentProfileController">
+<VBox fx:id="studentProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.components.studentProfileController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -19,12 +21,20 @@
                   <Insets left="50.0" top="20.0" />
                </HBox.margin>
             </Circle>
+            <Label fx:id="studentName" alignment="BOTTOM_RIGHT" text="&lt;Student Name&gt;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" top="45.0" />
+               </HBox.margin>
+            </Label>
             <Button fx:id="addNoteBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Add note">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets left="250.0" top="45.0" />
+                  <Insets left="100.0" top="45.0" />
                </HBox.margin>
                <effect>
                   <ColorAdjust />
@@ -33,7 +43,7 @@
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </Button>
-            <Button fx:id="editStudentProfileBtn" alignment="TOP_LEFT" mnemonicParsing="false" text="Edit profile" onAction="#onEditBtn">
+            <Button fx:id="editStudentProfileBtn" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onEditBtn" text="Edit profile">
                <opaqueInsets>
                   <Insets left="100.0" />
                </opaqueInsets>
@@ -48,7 +58,7 @@
       </HBox>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button fx:id="toHomeBtn" mnemonicParsing="false" onAction="#toHome" text="Home" translateX="120.0" >
+          <Button fx:id="toHomeBtn" mnemonicParsing="false" onAction="#toHome" text="Home" translateX="120.0">
                <effect>
                   <ColorAdjust contrast="0.02" hue="-1.0" saturation="0.27" />
                </effect>

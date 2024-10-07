@@ -3,6 +3,7 @@ package org.codecrafters.educa.components;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -12,6 +13,7 @@ import org.codecrafters.educa.profiles.Student;
 
 public class studentProfileController {
     public VBox studentProfile;
+    public Label studentName;
     @FXML
     private Button addNoteBtn;
     @FXML
@@ -31,6 +33,14 @@ public class studentProfileController {
     public studentProfileController(){
         selectedStudent = App.selectedStudent;
         sceneManager = App.sceneManager;
+    }
+
+    public void initialize(){
+        studentName.setText(App.selectedStudent.getFirstName() + " " + App.selectedStudent.getLastName());
+    }
+
+    public void setLabel(){
+        studentName.setText(App.selectedStudent.getFirstName() + " " + App.selectedStudent.getLastName());
     }
 
     @FXML

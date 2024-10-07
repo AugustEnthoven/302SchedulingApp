@@ -2,12 +2,14 @@ package org.codecrafters.educa;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.codecrafters.educa.components.studentProfileController;
 import org.codecrafters.educa.db.StudentDAO;
 import org.codecrafters.educa.profiles.Student;
 
@@ -16,6 +18,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class StudentViewController {
+    public Button viewBtn;
     @FXML
     private Button BackButton;
     @FXML
@@ -87,7 +90,7 @@ public class StudentViewController {
     }
 
     @FXML
-    protected void onViewButtonClick(){
+    protected void onViewButtonClick() throws IOException{
         if (App.selectedStudent != null) {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");

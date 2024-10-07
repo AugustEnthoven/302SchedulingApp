@@ -35,37 +35,29 @@ public class SceneManager {
         // Set scene title
         stage.get().setTitle("EduCalendar " + title);
 
-        if (scene != null){
-            // Push old scene to the stack
-            stack.push(stage.get().getScene());
-            // Set new scene with current scene
-            stage.get().setScene(scene);
-            current.set(scene);
-
-        } else {
-            // Create new scene
-            try {
-                // Get file path of the FXML file from sceneId
-                String fxml = sceneId + ".fxml";
+        // Create new scene
+        try {
+            // Get file path of the FXML file from sceneId
+            String fxml = sceneId + ".fxml";
 //                // Load CSS stylesheet for the scene
 //                String css = Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm();
-                // Create FXMLLoader to run FXML file
-                FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml));
-                // Load the FXML file and create new scene
-                Scene newScene = new Scene(loader.load(), App.WIDTH, App.HEIGHT);
+            // Create FXMLLoader to run FXML file
+            FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml));
+            // Load the FXML file and create new scene
+            Scene newScene = new Scene(loader.load(), App.WIDTH, App.HEIGHT);
 //                // Add stylesheet for new scene
 //                newScene.getStylesheets().add(css);
-                // Push the old scene to the stack
-                stack.push(stage.get().getScene());
-                // Store the new scene
-                scenes.put(sceneId, newScene);
-                // Set new scene as current scene
-                stage.get().setScene(newScene);
-                current.set(newScene);
-            } catch (IOException exception) {
-                System.out.println("Error loading scene: " + exception.getMessage());
-            }
+            // Push the old scene to the stack
+            stack.push(stage.get().getScene());
+            // Store the new scene
+            scenes.put(sceneId, newScene);
+            // Set new scene as current scene
+            stage.get().setScene(newScene);
+            current.set(newScene);
+        } catch (IOException exception) {
+            System.out.println("Error loading scene: " + exception.getMessage());
         }
+
     }
     public void back() {
         if (!stack.isEmpty()) {
