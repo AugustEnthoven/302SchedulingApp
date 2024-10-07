@@ -73,4 +73,11 @@ public class Note {
      * @param contents new note contents
      */
     public void setContents(String contents){this.contents = contents;}
+
+    public String toString(){
+        return "Student ID: " + studentId +
+                ", Teacher ID: " + creatorId +
+                ", Date Created: " + dateCreated +
+                "\n Contents: " + contents;
+    }
 }
