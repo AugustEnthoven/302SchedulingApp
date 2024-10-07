@@ -27,14 +27,14 @@ public class MockNotesDAO implements NotesDAO{
     }
 
     @Override
-    public void updateNote(Note note) {
+    public void updateNote(Note oldNote, Note newNote) {
         int index = -1;
         for (Note n : notes){
-            if (Objects.equals(n.toString(), note.toString())){
+            if (Objects.equals(n.toString(), oldNote.toString())){
                 index = notes.indexOf(n);
             }
         }
-        notes.set(index, note);
+        notes.set(index, newNote);
     }
 
     @Override
