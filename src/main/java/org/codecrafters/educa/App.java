@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.codecrafters.educa.db.NotesDAO;
+import org.codecrafters.educa.db.sqliteNotesDAO;
 import org.codecrafters.educa.models.user.UserDAO;
+import org.codecrafters.educa.profiles.Note;
 import org.codecrafters.educa.profiles.Student;
 
 import java.io.IOException;

@@ -29,7 +29,7 @@
                   <Insets left="25.0" top="45.0" />
                </HBox.margin>
             </Label>
-            <Button fx:id="addNoteBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Add note">
+            <Button fx:id="addNoteBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Add note" onAction="#onAddNoteBtn">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

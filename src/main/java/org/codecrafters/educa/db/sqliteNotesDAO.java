@@ -21,7 +21,7 @@ public class sqliteNotesDAO implements NotesDAO{
     /**
      * Function for creating a notes table in the database if it doesn't exist already
      */
-    private void createTable(){
+    public void createTable(){
         try {
             Statement createTable = connection.createStatement();
             createTable.execute(
@@ -40,7 +40,7 @@ public class sqliteNotesDAO implements NotesDAO{
     /**
      * A function for dropping the students table from the database
      */
-    private void dropTable() {
+    public void dropTable() {
         try {
             Statement dropTable = connection.createStatement();
             dropTable.execute("DROP TABLE Notes");
@@ -57,7 +57,7 @@ public class sqliteNotesDAO implements NotesDAO{
     public void addNote(Note note) {
         try {
             PreparedStatement insertNote = connection.prepareStatement(
-                    "INSERT INTO students (StudentID, CreatorID, Date, Contents)" +
+                    "INSERT INTO Notes (StudentID, CreatorID, Date, Contents)" +
                             "VALUES (?, ?, ?, ?)"
             );
             insertNote.setInt(1, note.getStudentId());
@@ -162,7 +162,7 @@ public class sqliteNotesDAO implements NotesDAO{
             );
             getAccount.setInt(1, studentId);
             ResultSet rs = getAccount.executeQuery();
-            if (rs.next()){
+            while (rs.next()){
                 notes.add(
                         new Note(
                             rs.getInt("StudentID"),
@@ -172,7 +172,6 @@ public class sqliteNotesDAO implements NotesDAO{
                     )
                 );
             }
-            return notes;
         } catch (SQLException ex) {
             System.err.println(ex);
         }

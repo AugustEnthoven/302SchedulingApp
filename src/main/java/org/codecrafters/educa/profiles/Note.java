@@ -80,7 +80,7 @@ public class Note {
      * getter method for contents
      * @return contents of the written note
      */
-    public String getContents(){return dateCreated;}
+    public String getContents(){return contents;}
 
     /**
      * setter method for contents
