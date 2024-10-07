@@ -70,9 +70,11 @@ public class EditStudentController {
         String lastName = lastNameTextField.getText();
         String dob = dobTextField.getText();
         String conditions = conditionsTextField.getText();
-        studentDAO.update(new Student(selectedStudent.getId(), firstName, lastName, dob, conditions));
+        selectedStudent = new Student(selectedStudent.getId(), firstName, lastName, dob, conditions);
+        studentDAO.update(selectedStudent);
 
         if (App.viewingProfile){
+            App.selectedStudent = selectedStudent;
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
             thisStage.show();

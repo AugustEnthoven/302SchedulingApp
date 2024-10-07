@@ -83,19 +83,46 @@
       </ToolBar>
       <HBox prefHeight="400.0" prefWidth="300.0">
          <children>
-            <TextArea fx:id="allergiesInfo" maxWidth="300.0" prefHeight="400.0" text="ALLERGIES:&#10;SEAFOOD - RASH&#10;PEANUT - ANAPHYLAXIS&#10;&#10;AREA THAT NEEDS EXTRA SUPPORT:&#10;Moving from one activity to another can be challenging for James. Providing a clear schedule and giving advance warnings (like a 5-minute heads-up) before transitions can help them prepare mentally.&#10;&#10;James may be sensitive to loud noises or bright lights. They often benefit from having a quieter space available for them to retreat to if they feel overwhelmed.&#10;&#10;Can have difficulty maintaining focus for extended periods. Breaking tasks into smaller, manageable steps and allowing for short breaks can help them stay engaged.&#10;&#10;......&#10;&#10;.......&#10;&#10;.......&#10;" wrapText="true">
-               <padding>
-                  <Insets bottom="5.0" left="10.0" />
-               </padding>
+            <VBox prefHeight="300.0" prefWidth="300.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="114.0" text="Conditions:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="conditionsInfo" alignment="TOP_LEFT" prefHeight="316.0" prefWidth="284.0" text="&lt;Conditions&gt;">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
                <HBox.margin>
                   <Insets />
                </HBox.margin>
-            </TextArea>
-            <TextArea fx:id="teachingAdviceInfo" maxWidth="600.0" minWidth="300.0" prefHeight="0.0" style="-fx-background-color: rgba(157, 157, 157, 1);" text="THINGS THAT HELP JAMES SUCCEED&#10;Clear instructions, both verbal and visual, to help understand tasks.&#10;&#10;Positive reinforcement and praise for effort, even if the outcome isn’t perfect.&#10;&#10;&#10;A consistent routine, as James feels more secure when they know what to expect.&#10;&#10;......&#10;&#10;.......&#10;&#10;.......&#10;" wrapText="true">
-               <opaqueInsets>
-                  <Insets bottom="50.0" right="100.0" />
-               </opaqueInsets>
-            </TextArea>
+            </VBox>
+            <VBox prefHeight="250.0" prefWidth="400.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="114.0" text="Notes:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextArea fx:id="noteLog" editable="false" prefHeight="232.0" prefWidth="284.0" promptText="&lt;Notes&gt;" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>

@@ -9,6 +9,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.codecrafters.educa.App;
 import org.codecrafters.educa.SceneManager;
+import org.codecrafters.educa.db.NotesDAO;
+import org.codecrafters.educa.db.sqliteNotesDAO;
+import org.codecrafters.educa.profiles.Note;
 import org.codecrafters.educa.profiles.Student;
 
 public class studentProfileController {
@@ -23,24 +26,28 @@ public class studentProfileController {
     @FXML
     private Button studentMedicalHistoryBtn;
     @FXML
-    private TextArea allergiesInfo;
+    private Label conditionsInfo;
     @FXML
-    private TextArea teachingAdviceInfo;
+    private TextArea noteLog;
 
+    private NotesDAO notesDAO;
     public Student selectedStudent;
     public SceneManager sceneManager;
 
     public studentProfileController(){
+        notesDAO = new sqliteNotesDAO();
         selectedStudent = App.selectedStudent;
         sceneManager = App.sceneManager;
     }
 
     public void initialize(){
         studentName.setText(App.selectedStudent.getFirstName() + " " + App.selectedStudent.getLastName());
-    }
-
-    public void setLabel(){
-        studentName.setText(App.selectedStudent.getFirstName() + " " + App.selectedStudent.getLastName());
+        conditionsInfo.setText(App.selectedStudent.getConditions());
+        StringBuilder log = new StringBuilder();
+        for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
+            log.append(n.getDateCreated()).append(" - ").append(n.getContents()).append("\n\n");
+        }
+        noteLog.setText(log.toString());
     }
 
     @FXML
