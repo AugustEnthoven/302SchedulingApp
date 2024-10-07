@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import org.codecrafters.educa.db.StudentDAO;
 import org.codecrafters.educa.profiles.Student;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class StudentViewController {

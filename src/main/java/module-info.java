@@ -2,7 +2,8 @@ module org.codecrafters.educa {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires password4j; //Import password4j in Project Structure to avoid errors
+    requires password4j;
+    requires java.desktop; //Import password4j in Project Structure to avoid errors
 
 
     opens org.codecrafters.educa to javafx.fxml;
