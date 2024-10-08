@@ -13,6 +13,8 @@ import org.codecrafters.educa.profiles.Student;
 
 import java.io.IOException;
 
+import static org.codecrafters.educa.App.getSelectedStudent;
+
 public class StudentViewController {
     @FXML
     private Button BackButton;
@@ -33,8 +35,8 @@ public class StudentViewController {
     @FXML
     private TableColumn<Student, String> conditions;
 
-    private StudentDAO studentDAO;
-    private Student selectedStudent = App.selectedStudent;
+    private final StudentDAO studentDAO;
+    private Student selectedStudent = getSelectedStudent();
     public StudentViewController(){
         studentDAO = new StudentDAO();
     }
@@ -42,7 +44,7 @@ public class StudentViewController {
 
     @FXML
     public void initialize(){
-        sceneManager = App.sceneManager;
+        sceneManager = App.getSceneManager();
 
         firstName.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
         lastName.setCellValueFactory(new PropertyValueFactory<Student, String>("lastName"));
@@ -61,7 +63,7 @@ public class StudentViewController {
 
     @FXML
     protected void onEditButtonClick() throws IOException{
-        if (App.selectedStudent != null) {
+        if (getSelectedStudent() != null) {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("EditStudent", "Edit " + selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s Profile");
             thisStage.show();
@@ -71,7 +73,6 @@ public class StudentViewController {
     @FXML
     protected void onCellClick(){
         selectedStudent = StudentsTable.getSelectionModel().getSelectedItem();
-        App.selectedStudent = selectedStudent;
     }
 
     @FXML
@@ -86,7 +87,7 @@ public class StudentViewController {
 
     @FXML
     protected void onViewButtonClick(){
-        if (App.selectedStudent != null) {
+        if (getSelectedStudent() != null) {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
             thisStage.show();

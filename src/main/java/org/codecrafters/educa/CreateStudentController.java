@@ -31,7 +31,7 @@ public class CreateStudentController {
     public SceneManager sceneManager;
     public CreateStudentController(){
         studentDAO = new StudentDAO();
-        sceneManager = App.sceneManager;
+        sceneManager = App.getSceneManager();
     }
 
     /**
@@ -77,6 +77,6 @@ public class CreateStudentController {
         Stage thisStage = sceneManager.getStage();
         sceneManager.switchScene("studentView", "Student View");
         thisStage.show();
-        App.selectedStudent = null;
+        App.setSelectedStudent(null);
     }
 }
