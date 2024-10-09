@@ -39,21 +39,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.EditPreferenceController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.EditPreferenceController">
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button fx:id="SubmitButton" disable="true" layoutX="457.0" layoutY="322.0" mnemonicParsing="false" onAction="#onSubmitClick" text="Submit" />
-                <Label layoutX="94.0" layoutY="111.0" text="Class" />
+                <Button fx:id="SubmitButton" disable="true" layoutX="556.0" layoutY="352.0" mnemonicParsing="false" onAction="#onSubmitClick" text="Submit" />
+                <Label layoutX="94.0" layoutY="111.0" text="Class" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
                 <Label layoutX="94.0" layoutY="49.0" prefHeight="46.0" prefWidth="319.0" text="Edit Class Preference">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
-                <Button fx:id="BackButton" layoutX="402.0" layoutY="322.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
-            <Label layoutX="300.0" layoutY="111.0" text="Preference" />
-            <ChoiceBox fx:id="ClassDropdown" layoutX="94.0" layoutY="134.0" prefWidth="150.0" />
-            <ChoiceBox fx:id="PreferenceDropDown" layoutX="300.0" layoutY="134.0" prefWidth="150.0" />
+                <Button fx:id="BackButton" layoutX="501.0" layoutY="352.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+            <Label layoutX="169.0" layoutY="111.0" text="Preference">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <ChoiceBox fx:id="EnglishChoicebox" layoutX="169.0" layoutY="135.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="MathChoicebox" layoutX="169.0" layoutY="170.0" prefWidth="150.0" />
+            <Label layoutX="95.0" layoutY="140.0" text="English" textAlignment="RIGHT" />
+            <Label layoutX="95.0" layoutY="175.0" text="Math" textAlignment="RIGHT" />
+            <Label layoutX="95.0" layoutY="210.0" text="History" textAlignment="RIGHT" />
+            <ChoiceBox fx:id="HistoryChoicebox" layoutX="169.0" layoutY="205.0" prefWidth="150.0" />
+            <Label layoutX="95.0" layoutY="245.0" text="Science" textAlignment="RIGHT" />
+            <ChoiceBox fx:id="ScienceChoicebox" layoutX="169.0" layoutY="240.0" prefWidth="150.0" />
+            <Label layoutX="95.0" layoutY="280.0" text="PE" textAlignment="RIGHT" />
+            <ChoiceBox fx:id="PEChoicebox" layoutX="169.0" layoutY="275.0" prefWidth="150.0" />
+            <Label layoutX="95.0" layoutY="315.0" text="Spanish" textAlignment="RIGHT" />
+            <ChoiceBox fx:id="SpanishChoicebox" layoutX="169.0" layoutY="310.0" prefWidth="150.0" />
             </children>
         </AnchorPane>
     </children>
