@@ -30,6 +30,8 @@ public class App extends Application {
 
     public static SceneManager getSceneManager() { return sceneManager; }
 
+
+
     @Override
     public void start(Stage stage) throws IOException {
         sceneManager = new SceneManager(stage);
