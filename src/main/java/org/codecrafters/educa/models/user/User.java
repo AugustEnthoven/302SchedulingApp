@@ -21,7 +21,7 @@ public class User {
 
     public int getId() { return id; }
     public String getEmail() { return email; }
-    public String getRole() {return role; }
+    public String getRole() { return role; }
     public String getPassword() { return password; }
     public String getUsername() { return username; }
     public String getFirstname() { return firstname; }

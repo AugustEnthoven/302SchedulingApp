@@ -166,7 +166,7 @@ public class registerController {
                 }
                 // Register a user
                 try {
-                    authenticatedSession.register(lastname, firstname, email,role,username,password);
+                    authenticatedSession.register(lastname, firstname, email, role, username, password);
 
                     Platform.runLater(() -> {
                         successMessage.setVisible(true);
