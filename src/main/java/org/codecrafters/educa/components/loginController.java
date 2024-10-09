@@ -24,7 +24,7 @@ public class loginController {
             Stage stage = App.getStage();
             SceneManager sceneManager = App.getSceneManager();
 
-            sceneManager.switchScene("home", "Home");
+            sceneManager.switchScene("StudentView", "Home");
             stage.setTitle("EduCalendar - Home");
         });
     }
