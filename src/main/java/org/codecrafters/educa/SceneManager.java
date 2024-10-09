@@ -35,14 +35,6 @@ public class SceneManager {
         // Set scene title
         stage.get().setTitle("EduCalendar " + title);
 
-        if (scene != null){
-            // Push old scene to the stack
-            stack.push(stage.get().getScene());
-            // Set new scene with current scene
-            stage.get().setScene(scene);
-            current.set(scene);
-
-        } else {
             // Create new scene
             try {
                 // Get file path of the FXML file from sceneId
@@ -65,7 +57,6 @@ public class SceneManager {
             } catch (IOException exception) {
                 System.out.println("Error loading scene: " + exception.getMessage());
             }
-        }
     }
     public void back() {
         if (!stack.isEmpty()) {

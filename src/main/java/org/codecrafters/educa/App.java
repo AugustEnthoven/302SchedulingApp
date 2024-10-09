@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.sql.Connection;
 
 public class App extends Application {
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 600;
+    public static final int WIDTH = 640;
+    public static final int HEIGHT = 400;
     public static boolean viewingProfile;
 
     private static Student selectedStudent;
@@ -33,7 +33,6 @@ public class App extends Application {
         sceneManager = new SceneManager(stage);
 
         Stage thisStage = sceneManager.getStage();
-        thisStage.initStyle(StageStyle.UNDECORATED);
 
         // Authenticate user -  if user is not logged in, show login scene
         if (authenticatedSession.isAuthenticated()) {

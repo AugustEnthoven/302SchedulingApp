@@ -179,6 +179,7 @@ public class registerController {
                                 Platform.runLater(() -> {
                                     SceneManager sceneManager = App.getSceneManager();
                                     Stage stage = App.getStage();
+                                    stage.setHeight(480);
 
                                     sceneManager.switchScene("login", "Login");
                                     stage.setTitle("EduCalendar - Login");

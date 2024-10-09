@@ -115,6 +115,7 @@ public class loginController {
     private void register() {
         Stage stage = App.getStage();
         SceneManager sceneManager = App.getSceneManager();
+        stage.setHeight(600);
 
         sceneManager.switchScene("register", "Register");
         stage.setTitle("EduCalendar - Register");
