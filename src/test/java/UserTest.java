@@ -1,19 +1,25 @@
-package org.codecrafters.educa.models.user;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.codecrafters.educa.models.user.*;
 
 class UserTest {
     private User user;
 
     @BeforeEach
     public void setUser() {
-        user = new User(1, "test@testing.com", "teacher", "username", "password");
+        user = new User(1, "lastname", "firstname", "test@testing.com", "teacher", "username", "password");
     }
 
     // UserID Test
     @Test
     void getId() { assertTrue(user.getId() > 0); }
+    // Last name test
+    @Test
+    void getLastName() { assertEquals("lastname", user.getLastname()); }
+    // First name test
+    @Test
+    void getFirstName() { assertEquals("firstname", user.getFirstname()); }
     // Email Test
     @Test
     void getEmail() { assertEquals("test@testing.com", user.getEmail()); }
