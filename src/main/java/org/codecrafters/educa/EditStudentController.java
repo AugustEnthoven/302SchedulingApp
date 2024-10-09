@@ -31,8 +31,8 @@ public class EditStudentController {
 
     public EditStudentController(){
         studentDAO = new StudentDAO();
-        selectedStudent = App.selectedStudent;
-        sceneManager = App.sceneManager;
+        selectedStudent = App.getSelectedStudent();
+        sceneManager = App.getSceneManager();
     }
 
     @FXML
@@ -80,7 +80,7 @@ public class EditStudentController {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentView", "Student View");
             thisStage.show();
-            App.selectedStudent = null;
+            App.setSelectedStudent(null);
         }
     }
 
@@ -98,7 +98,7 @@ public class EditStudentController {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentView", "Student View");
             thisStage.show();
-            App.selectedStudent = null;
+            App.setSelectedStudent(null);
         }
     }
 }

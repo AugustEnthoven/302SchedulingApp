@@ -10,6 +10,8 @@ import org.codecrafters.educa.App;
 import org.codecrafters.educa.SceneManager;
 import org.codecrafters.educa.profiles.Student;
 
+import static org.codecrafters.educa.App.getSelectedStudent;
+
 public class studentProfileController {
     public VBox studentProfile;
     @FXML
@@ -29,8 +31,8 @@ public class studentProfileController {
     public SceneManager sceneManager;
 
     public studentProfileController(){
-        selectedStudent = App.selectedStudent;
-        sceneManager = App.sceneManager;
+        selectedStudent = getSelectedStudent();
+        sceneManager = App.getSceneManager();
     }
 
     @FXML
@@ -38,7 +40,7 @@ public class studentProfileController {
         Stage thisStage = sceneManager.getStage();
         sceneManager.switchScene("studentView", "Student View");
         thisStage.show();
-        App.selectedStudent = null;
+        App.setSelectedStudent(null);
         App.viewingProfile = false;
     }
 

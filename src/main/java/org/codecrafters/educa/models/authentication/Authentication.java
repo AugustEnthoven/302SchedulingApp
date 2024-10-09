@@ -54,7 +54,7 @@ public class Authentication {
         user.set(null);
     }
 
-    public void register(String email, String role, String username, String password) throws ExistingUserException {
+    public void register(String lastname, String firstname, String email, String role, String username, String password) throws ExistingUserException {
         try {
             UserDAO DAO = App.getUserDAO();
 
@@ -72,7 +72,7 @@ public class Authentication {
             }
 
             // Add new user
-            DAO.addUser(email, role, username, Password.hash(password).withArgon2().getResult());
+            DAO.addUser(lastname, firstname, email, role, username, Password.hash(password).withArgon2().getResult());
         } catch (ExistingUserException exception) {
             throw new ExistingUserException(exception.getMessage());
         }
