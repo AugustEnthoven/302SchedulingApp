@@ -12,3 +12,4 @@ class DatabaseConnectionTest {
         assertTrue(connection != null);
     }
 }
+//a1.gough@qut.edu.au
