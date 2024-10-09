@@ -1,10 +1,7 @@
-import org.codecrafters.educa.db.IStudentDAO;
 import org.codecrafters.educa.db.MockStudentDAO;
-import org.codecrafters.educa.db.StudentDAO;
 import org.codecrafters.educa.profiles.Student;
 import org.junit.jupiter.api.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
