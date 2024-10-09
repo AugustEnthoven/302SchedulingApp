@@ -34,7 +34,7 @@ public class App extends Application {
         viewingProfile = false;
 
         Stage thisStage = sceneManager.getStage();
-        sceneManager.switchScene("EditPreference", "Edit Preferences");
+        sceneManager.switchScene("SetTimetable", "Set Timetable");
         thisStage.show();
     }
     public static void main(String[] args) {

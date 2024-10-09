@@ -12,38 +12,67 @@ public class SetTimetableController implements Initializable {
 
     @FXML
     private ChoiceBox<String> M1;
+    @FXML
     private ChoiceBox<String> M2;
+    @FXML
     private ChoiceBox<String> M3;
+    @FXML
     private ChoiceBox<String> M4;
+    @FXML
     private ChoiceBox<String> M5;
+    @FXML
     private ChoiceBox<String> M6;
 
+    @FXML
     private ChoiceBox<String> T1;
+    @FXML
     private ChoiceBox<String> T2;
+    @FXML
     private ChoiceBox<String> T3;
+    @FXML
     private ChoiceBox<String> T4;
+    @FXML
     private ChoiceBox<String> T5;
+    @FXML
     private ChoiceBox<String> T6;
 
+    @FXML
     private ChoiceBox<String> W1;
+    @FXML
     private ChoiceBox<String> W2;
+    @FXML
     private ChoiceBox<String> W3;
+    @FXML
     private ChoiceBox<String> W4;
+    @FXML
     private ChoiceBox<String> W5;
+    @FXML
     private ChoiceBox<String> W6;
 
+    @FXML
     private ChoiceBox<String> TH1;
+    @FXML
     private ChoiceBox<String> TH2;
+    @FXML
     private ChoiceBox<String> TH3;
+    @FXML
     private ChoiceBox<String> TH4;
+    @FXML
     private ChoiceBox<String> TH5;
+    @FXML
     private ChoiceBox<String> TH6;
 
+    @FXML
     private ChoiceBox<String> F1;
+    @FXML
     private ChoiceBox<String> F2;
+    @FXML
     private ChoiceBox<String> F3;
+    @FXML
     private ChoiceBox<String> F4;
+    @FXML
     private ChoiceBox<String> F5;
+    @FXML
     private ChoiceBox<String> F6;
 
 
@@ -118,7 +147,8 @@ public class SetTimetableController implements Initializable {
         F6.setOnAction(this::updateSchedule);
     }
 
-    public void updateSchedule(ActionEvent event)
+    @FXML
+    void updateSchedule(ActionEvent event)
     {
         String newClass = M1.getValue(); //Change M1 to whichever choicebox was used
         //Maybe we could use a list of choiceboxes? I'm not sure how you wanted to do this
