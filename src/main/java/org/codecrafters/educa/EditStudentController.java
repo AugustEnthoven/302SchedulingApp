@@ -74,7 +74,7 @@ public class EditStudentController {
         studentDAO.update(selectedStudent);
 
         if (App.viewingProfile){
-            App.selectedStudent = selectedStudent;
+            App.setSelectedStudent(selectedStudent);
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
             thisStage.show();

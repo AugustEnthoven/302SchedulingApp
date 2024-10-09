@@ -45,13 +45,13 @@ public class studentProfileController {
 
     public studentProfileController(){
         notesDAO = new sqliteNotesDAO();
-        selectedStudent = App.selectedStudent;
-        sceneManager = App.sceneManager;
+        selectedStudent = App.getSelectedStudent();
+        sceneManager = App.getSceneManager();
     }
 
     public void initialize(){
-        studentName.setText(App.selectedStudent.getFirstName() + " " + App.selectedStudent.getLastName());
-        conditionsInfo.setText(App.selectedStudent.getConditions());
+        studentName.setText(App.getSelectedStudent().getFirstName() + " " + App.getSelectedStudent().getLastName());
+        conditionsInfo.setText(App.getSelectedStudent().getConditions());
         StringBuilder log = new StringBuilder();
         for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
             log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n\n");
@@ -64,7 +64,7 @@ public class studentProfileController {
         Stage thisStage = sceneManager.getStage();
         sceneManager.switchScene("studentView", "Student View");
         thisStage.show();
-        App.selectedStudent = null;
+        App.setSelectedStudent(null);
         App.viewingProfile = false;
     }
 
