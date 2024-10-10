@@ -1,8 +1,10 @@
 package org.codecrafters.educa;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class TimeTableController {
+
 
     @FXML
     void onEditButtonClick()
@@ -11,19 +13,7 @@ public class TimeTableController {
     }
 
     @FXML
-    void onDeleteButtonClick()
-    {
-
-    }
-
-    @FXML
-    void onNewButtonClick()
-    {
-
-    }
-
-    @FXML
-    void onCellClick()
+    public void onBackButtonClick()
     {
 
     }
