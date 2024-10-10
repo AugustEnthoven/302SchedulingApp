@@ -143,4 +143,19 @@ public class studentProfileController {
         popup.show();
     }
 
+    @FXML
+    public void onScheduleBtn()
+    {
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("Timetable", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s Schedule");
+        thisStage.show();
+    }
+
+    @FXML
+    public void onClassPreferencesBtn()
+    {
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("EditPreference", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s class preferences");
+        thisStage.show();
+    }
 }

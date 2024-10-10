@@ -8,7 +8,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.SetTimetableController">
    <children>
       <Text layoutX="13.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Schedule" />
-      <Button layoutX="547.0" layoutY="8.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="backBtn" layoutX="547.0" layoutY="8.0" onAction="#onBackBtn" mnemonicParsing="false" text="Back" />
       <Text layoutX="93.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" />
       <Text layoutX="193.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" />
       <Text layoutX="293.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" />

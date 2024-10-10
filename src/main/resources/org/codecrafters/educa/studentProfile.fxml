@@ -63,12 +63,12 @@
                   <ColorAdjust contrast="0.02" hue="-1.0" saturation="0.27" />
                </effect>
             </Button>
-            <Button fx:id="toStudentScheduleBtn" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" text="Schedule" translateX="200.0">
+            <Button fx:id="toStudentScheduleBtn" layoutX="10.0" layoutY="12.0" onAction="#onScheduleBtn" mnemonicParsing="false" text="Schedule" translateX="200.0">
                <effect>
                   <ColorAdjust contrast="-0.02" hue="-1.0" saturation="0.27" />
                </effect>
             </Button>
-            <Button fx:id="studentMedicalHistoryBtn" layoutY="12.0" mnemonicParsing="false" text="Medical history" translateX="280.0">
+            <Button fx:id="studentClassPreferenceBtn" layoutY="12.0" onAction="#onClassPreferencesBtn" mnemonicParsing="false" text="Class Preferences" translateX="280.0">
                <effect>
                   <ColorAdjust contrast="0.02" saturation="0.27" />
                </effect>

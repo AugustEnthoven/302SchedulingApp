@@ -3,13 +3,18 @@ package org.codecrafters.educa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.stage.Stage;
+import org.codecrafters.educa.db.ScheduleDAO;
+import org.codecrafters.educa.profiles.Student;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SetTimetableController implements Initializable {
 
+    public Button backBtn;
     @FXML
     private ChoiceBox<String> M1;
     @FXML
@@ -75,9 +80,17 @@ public class SetTimetableController implements Initializable {
     @FXML
     private ChoiceBox<String> F6;
 
-
+    public Student selectedStudent;
+    public SceneManager sceneManager;
+    public ScheduleDAO scheduleDAO;
 
     private String[] classes = {"English","History","Science","PE","Math","Spanish"};
+
+    public SetTimetableController(){
+        selectedStudent = App.getSelectedStudent();
+        sceneManager = App.getSceneManager();
+        scheduleDAO = new ScheduleDAO();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -152,5 +165,13 @@ public class SetTimetableController implements Initializable {
     {
         String newClass = M1.getValue(); //Change M1 to whichever choicebox was used
         //Maybe we could use a list of choiceboxes? I'm not sure how you wanted to do this
+    }
+
+    @FXML
+    public void onBackBtn()
+    {
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("Timetable", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s timetable");
+        thisStage.show();
     }
 }
