@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.codecrafters.educa.db.DatabaseConnection;
+import org.codecrafters.educa.db.sqliteNotesDAO;
 import org.codecrafters.educa.models.authentication.Authentication;
 import org.codecrafters.educa.models.user.UserDAO;
 import org.codecrafters.educa.profiles.Student;

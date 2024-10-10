@@ -95,4 +95,28 @@ public class UserDAO {
         }
         return null;
     }
+
+    public User findById(int id) {
+        try {
+            PreparedStatement findUser = connection.prepareStatement(
+                    "SELECT * FROM User WHERE id = ?"
+            );
+            findUser.setInt(1, id);
+            ResultSet results = findUser.executeQuery();
+            if (results.next()){
+                return new User(
+                        results.getInt("id"),
+                        results.getString("lastname"),
+                        results.getString("firstname"),
+                        results.getString("email"),
+                        results.getString("role"),
+                        results.getString("username"),
+                        results.getString("password")
+                );
+            }
+        } catch (SQLException exception){
+            System.err.println(exception);
+        }
+        return null;
+    }
 }

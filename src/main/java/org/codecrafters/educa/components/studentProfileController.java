@@ -54,7 +54,9 @@ public class studentProfileController {
         conditionsInfo.setText(App.getSelectedStudent().getConditions());
         StringBuilder log = new StringBuilder();
         for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
-            log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n\n");
+            log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n" + " -" +
+                App.getUserDAO().findById(n.getCreatorId()).getFirstname() + " " +
+                App.getUserDAO().findById(n.getCreatorId()).getLastname() + "\n\n");
         }
         noteLog.setText(log.toString());
     }
@@ -114,11 +116,13 @@ public class studentProfileController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 if (!note.getText().isEmpty()){
-                    notesDAO.addNote(new Note(selectedStudent.getId(), 1, LocalDate.now().toString(), note.getText()));
+                    notesDAO.addNote(new Note(selectedStudent.getId(), App.getAuthenticatedSession().getUser().getId(), LocalDate.now().toString(), note.getText()));
                     popup.close();
                     StringBuilder log = new StringBuilder();
                     for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
-                        log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n\n");
+                        log.insert(0, n.getDateCreated() + " - " + n.getContents() + " -" + "\n" +
+                            App.getUserDAO().findById(n.getCreatorId()).getFirstname() + " " +
+                            App.getUserDAO().findById(n.getCreatorId()).getLastname() + "\n\n");
                     }
                     noteLog.setText(log.toString());
                 }

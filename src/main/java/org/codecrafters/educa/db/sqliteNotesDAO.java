@@ -94,6 +94,17 @@ public class sqliteNotesDAO implements NotesDAO{
         }
     }
 
+    public void studentDeleted(int id){
+        try {
+            PreparedStatement getAccount = connection.prepareStatement(
+                    "DROP * FROM Notes WHERE StudentID = ?"
+            );
+            getAccount.setInt(1, id);
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+    }
+
     /**
      * method for updating an existing note within the database
      * @param oldNote original note as it currently exists

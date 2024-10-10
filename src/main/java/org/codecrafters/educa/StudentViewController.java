@@ -10,7 +10,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.codecrafters.educa.components.studentProfileController;
+import org.codecrafters.educa.db.NotesDAO;
 import org.codecrafters.educa.db.StudentDAO;
+import org.codecrafters.educa.db.sqliteNotesDAO;
 import org.codecrafters.educa.profiles.Student;
 
 import javax.swing.*;
@@ -39,9 +41,11 @@ public class StudentViewController {
     private TableColumn<Student, String> conditions;
 
     private StudentDAO studentDAO;
+    private sqliteNotesDAO notesDAO;
     private Student selectedStudent = App.getSelectedStudent();
     public StudentViewController(){
         studentDAO = new StudentDAO();
+        notesDAO = new sqliteNotesDAO();
     }
     public SceneManager sceneManager;
 
@@ -83,6 +87,7 @@ public class StudentViewController {
     protected void onDeleteButtonClick(){
         if (selectedStudent != null){
             studentDAO.delete(selectedStudent.getId());
+            notesDAO.studentDeleted(selectedStudent.getId());
             selectedStudent = null;
             StudentsTable.getItems().clear();
             StudentsTable.getItems().setAll(studentDAO.getAll());
