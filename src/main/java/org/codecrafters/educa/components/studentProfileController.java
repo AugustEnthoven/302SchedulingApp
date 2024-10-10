@@ -120,9 +120,9 @@ public class studentProfileController {
                     popup.close();
                     StringBuilder log = new StringBuilder();
                     for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
-                        log.insert(0, n.getDateCreated() + " - " + n.getContents() + " -" + "\n" +
-                            App.getUserDAO().findById(n.getCreatorId()).getFirstname() + " " +
-                            App.getUserDAO().findById(n.getCreatorId()).getLastname() + "\n\n");
+                        log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n" +
+                            " -" + App.getUserDAO().findById(n.getCreatorId()).getFirstname() +
+                            " " + App.getUserDAO().findById(n.getCreatorId()).getLastname() + "\n\n");
                     }
                     noteLog.setText(log.toString());
                 }
