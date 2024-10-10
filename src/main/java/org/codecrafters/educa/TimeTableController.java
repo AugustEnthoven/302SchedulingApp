@@ -2,6 +2,7 @@ package org.codecrafters.educa;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 import org.codecrafters.educa.db.NotesDAO;
 import org.codecrafters.educa.db.ScheduleDAO;
@@ -14,10 +15,17 @@ public class TimeTableController {
     public SceneManager sceneManager;
     public ScheduleDAO scheduleDAO;
 
+    @FXML
+    private TableColumn period;
+
     public TimeTableController(){
         selectedStudent = App.getSelectedStudent();
         sceneManager = App.getSceneManager();
         scheduleDAO = new ScheduleDAO();
+    }
+
+    public void initialize(){
+
     }
 
     @FXML
