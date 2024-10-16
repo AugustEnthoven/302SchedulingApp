@@ -59,7 +59,7 @@ public class ScheduleDAO {
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
                     "INSERT INTO schedules (studentID, className, time, preference)" +
-                            "VALUES (?, ?, ?, ?, ?)"
+                            "VALUES (?, ?, ?, ?)"
             );
             insertAccount.setInt(1, schedule.GetStudentID());
             insertAccount.setString(2, schedule.GetClassName());
