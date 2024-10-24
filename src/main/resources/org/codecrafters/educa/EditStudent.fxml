@@ -32,36 +32,41 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import com.gluonhq.charm.glisten.control.AppBar?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.EditStudentController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.EditStudentController">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #ADD8E6;" VBox.vgrow="ALWAYS">
             <children>
-                <Button fx:id="SubmitButton" disable="true" layoutX="457.0" layoutY="322.0" mnemonicParsing="false" onAction="#onSubmitClick" text="Submit" />
-                <TextField fx:id="firstNameTextField" layoutX="94.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
-                <TextField fx:id="lastNameTextField" layoutX="320.0" layoutY="128.0" onKeyTyped="#onStudentFieldEdit" />
-                <TextField fx:id="dobTextField" layoutX="94.0" layoutY="187.0" onKeyTyped="#onStudentFieldEdit" />
-                <TextField fx:id="conditionsTextField" alignment="TOP_LEFT" layoutX="94.0" layoutY="249.0" onAction="#onStudentFieldEdit" onKeyTyped="#onStudentFieldEdit" prefHeight="61.0" prefWidth="451.0" />
-                <Label layoutX="94.0" layoutY="231.0" text="Conditions" />
-                <Label layoutX="94.0" layoutY="111.0" text="First Name" />
-                <Label layoutX="320.0" layoutY="111.0" text="Surname" />
-                <Label layoutX="94.0" layoutY="169.0" text="Date of Birth" />
-                <Label layoutX="94.0" layoutY="49.0" prefHeight="46.0" prefWidth="319.0" text="Edit Student Profile">
+            <AppBar layoutX="-1.0" prefHeight="65.0" prefWidth="642.0" style="-fx-background-color: #004792;" titleText="" />
+                <Button fx:id="SubmitButton" disable="true" layoutX="399.0" layoutY="336.0" mnemonicParsing="false" onAction="#onSubmitClick" text="Submit" />
+                <TextField fx:id="firstNameTextField" layoutX="339.0" layoutY="140.0" onKeyTyped="#onStudentFieldEdit" />
+                <TextField fx:id="lastNameTextField" layoutX="337.0" layoutY="91.0" onKeyTyped="#onStudentFieldEdit" />
+                <TextField fx:id="dobTextField" layoutX="338.0" layoutY="190.0" onKeyTyped="#onStudentFieldEdit" />
+                <TextField fx:id="conditionsTextField" alignment="TOP_LEFT" layoutX="338.0" layoutY="241.0" onAction="#onStudentFieldEdit" onKeyTyped="#onStudentFieldEdit" prefHeight="83.0" prefWidth="255.0" />
+                <Label layoutX="340.0" layoutY="222.0" text="Conditions" />
+                <Label layoutX="339.0" layoutY="121.0" text="First Name" />
+                <Label layoutX="337.0" layoutY="73.0" text="Surname" />
+                <Label layoutX="339.0" layoutY="171.0" text="Date of Birth" />
+                <Label alignment="CENTER" layoutX="51.0" layoutY="117.0" prefHeight="46.0" prefWidth="247.0" text="Edit Student Profile">
                     <font>
-                        <Font size="30.0" />
+                        <Font name="Arial Bold" size="24.0" />
                     </font>
                 </Label>
-                <Button fx:id="BackButton" layoutX="402.0" layoutY="322.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+                <Button fx:id="BackButton" layoutX="340.0" layoutY="335.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="61.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../classic_disney/CAB302/work-schedules-header-banner.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>
