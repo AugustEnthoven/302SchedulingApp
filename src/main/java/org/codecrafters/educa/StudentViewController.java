@@ -2,18 +2,25 @@ package org.codecrafters.educa;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.codecrafters.educa.components.studentProfileController;
+import org.codecrafters.educa.db.NotesDAO;
 import org.codecrafters.educa.db.StudentDAO;
+import org.codecrafters.educa.db.sqliteNotesDAO;
 import org.codecrafters.educa.profiles.Student;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class StudentViewController {
+    public Button viewBtn;
     @FXML
     private Button BackButton;
     @FXML
@@ -34,15 +41,17 @@ public class StudentViewController {
     private TableColumn<Student, String> conditions;
 
     private StudentDAO studentDAO;
-    private Student selectedStudent = App.selectedStudent;
+    private sqliteNotesDAO notesDAO;
+    private Student selectedStudent = App.getSelectedStudent();
     public StudentViewController(){
         studentDAO = new StudentDAO();
+        notesDAO = new sqliteNotesDAO();
     }
     public SceneManager sceneManager;
 
     @FXML
     public void initialize(){
-        sceneManager = App.sceneManager;
+        sceneManager = App.getSceneManager();
 
         firstName.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
         lastName.setCellValueFactory(new PropertyValueFactory<Student, String>("lastName"));
@@ -61,7 +70,7 @@ public class StudentViewController {
 
     @FXML
     protected void onEditButtonClick() throws IOException{
-        if (App.selectedStudent != null) {
+        if (App.getSelectedStudent() != null) {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("EditStudent", "Edit " + selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s Profile");
             thisStage.show();
@@ -71,13 +80,14 @@ public class StudentViewController {
     @FXML
     protected void onCellClick(){
         selectedStudent = StudentsTable.getSelectionModel().getSelectedItem();
-        App.selectedStudent = selectedStudent;
+        App.setSelectedStudent(selectedStudent);
     }
 
     @FXML
     protected void onDeleteButtonClick(){
         if (selectedStudent != null){
             studentDAO.delete(selectedStudent.getId());
+            notesDAO.studentDeleted(selectedStudent.getId());
             selectedStudent = null;
             StudentsTable.getItems().clear();
             StudentsTable.getItems().setAll(studentDAO.getAll());
@@ -85,8 +95,8 @@ public class StudentViewController {
     }
 
     @FXML
-    protected void onViewButtonClick(){
-        if (App.selectedStudent != null) {
+    protected void onViewButtonClick() throws IOException{
+        if (App.getSelectedStudent() != null) {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
             thisStage.show();

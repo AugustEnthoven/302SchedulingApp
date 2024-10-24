@@ -1,17 +1,31 @@
 package org.codecrafters.educa.components;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.codecrafters.educa.App;
 import org.codecrafters.educa.SceneManager;
+import org.codecrafters.educa.db.NotesDAO;
+import org.codecrafters.educa.db.sqliteNotesDAO;
+import org.codecrafters.educa.profiles.Note;
 import org.codecrafters.educa.profiles.Student;
+
+import java.time.LocalDate;
 
 public class studentProfileController {
     public VBox studentProfile;
+    public Label studentName;
     @FXML
     private Button addNoteBtn;
     @FXML
@@ -21,16 +35,30 @@ public class studentProfileController {
     @FXML
     private Button studentMedicalHistoryBtn;
     @FXML
-    private TextArea allergiesInfo;
+    private Label conditionsInfo;
     @FXML
-    private TextArea teachingAdviceInfo;
+    private TextArea noteLog;
 
+    private NotesDAO notesDAO;
     public Student selectedStudent;
     public SceneManager sceneManager;
 
     public studentProfileController(){
-        selectedStudent = App.selectedStudent;
-        sceneManager = App.sceneManager;
+        notesDAO = new sqliteNotesDAO();
+        selectedStudent = App.getSelectedStudent();
+        sceneManager = App.getSceneManager();
+    }
+
+    public void initialize(){
+        studentName.setText(App.getSelectedStudent().getFirstName() + " " + App.getSelectedStudent().getLastName());
+        conditionsInfo.setText(App.getSelectedStudent().getConditions());
+        StringBuilder log = new StringBuilder();
+        for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
+            log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n" + " -" +
+                App.getUserDAO().findById(n.getCreatorId()).getFirstname() + " " +
+                App.getUserDAO().findById(n.getCreatorId()).getLastname() + "\n\n");
+        }
+        noteLog.setText(log.toString());
     }
 
     @FXML
@@ -38,7 +66,7 @@ public class studentProfileController {
         Stage thisStage = sceneManager.getStage();
         sceneManager.switchScene("studentView", "Student View");
         thisStage.show();
-        App.selectedStudent = null;
+        App.setSelectedStudent(null);
         App.viewingProfile = false;
     }
 
@@ -49,4 +77,85 @@ public class studentProfileController {
         thisStage.show();
     }
 
+    @FXML
+    public void onAddNoteBtn(){
+        Stage popup = new Stage();
+        VBox comp = new VBox();
+        TextField note = new TextField();
+        HBox bar = new HBox();
+        Button back = new Button();
+        Button submit = new Button();
+        submit.setDisable(true);
+
+        popup.setTitle("Add note");
+
+        note.setMinHeight(150);
+        note.setAlignment(Pos.TOP_LEFT);
+
+        note.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (!note.getText().isEmpty()){
+                    submit.setDisable(false);
+                } else {
+                    submit.setDisable(true);
+                }
+            }
+        });
+
+        back.setText("Back");
+        back.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                popup.close();
+            }
+        });
+
+        submit.setText("Submit");
+        submit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if (!note.getText().isEmpty()){
+                    notesDAO.addNote(new Note(selectedStudent.getId(), App.getAuthenticatedSession().getUser().getId(), LocalDate.now().toString(), note.getText()));
+                    popup.close();
+                    StringBuilder log = new StringBuilder();
+                    for (Note n : notesDAO.getNotesByStudentId(selectedStudent.getId())){
+                        log.insert(0, n.getDateCreated() + " - " + n.getContents() + "\n" +
+                            " -" + App.getUserDAO().findById(n.getCreatorId()).getFirstname() +
+                            " " + App.getUserDAO().findById(n.getCreatorId()).getLastname() + "\n\n");
+                    }
+                    noteLog.setText(log.toString());
+                }
+            }
+        });
+
+        comp.getChildren().add(note);
+        comp.getChildren().add(bar);
+
+        bar.getChildren().add(back);
+        bar.getChildren().add(submit);
+        bar.setAlignment(Pos.CENTER_RIGHT);
+        bar.setMargin(back, new Insets(12, 10, 0, 10));
+        bar.setMargin(submit, new Insets(12, 10, 0, 10));
+
+        Scene stageScene = new Scene(comp, 500, 200);
+        popup.setScene(stageScene);
+        popup.show();
+    }
+
+    @FXML
+    public void onScheduleBtn()
+    {
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("Timetable", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s Schedule");
+        thisStage.show();
+    }
+
+    @FXML
+    public void onClassPreferencesBtn()
+    {
+        Stage thisStage = sceneManager.getStage();
+        sceneManager.switchScene("EditPreference", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s class preferences");
+        thisStage.show();
+    }
 }

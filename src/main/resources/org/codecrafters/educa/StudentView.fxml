@@ -58,7 +58,7 @@
                   <TableColumn fx:id="conditions" prefWidth="320.0" text="Conditions" />
               </columns>
             </TableView>
-            <Button layoutX="347.0" layoutY="322.0" mnemonicParsing="false" onAction="#onViewButtonClick" prefHeight="25.0" prefWidth="53.0" text="View" />
+            <Button fx:id="viewBtn" layoutX="347.0" layoutY="322.0" mnemonicParsing="false" onAction="#onViewButtonClick" prefHeight="25.0" prefWidth="53.0" text="View" />
       </children>
     </AnchorPane>
   </children>

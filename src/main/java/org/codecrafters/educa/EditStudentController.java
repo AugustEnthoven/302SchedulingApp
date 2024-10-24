@@ -31,8 +31,8 @@ public class EditStudentController {
 
     public EditStudentController(){
         studentDAO = new StudentDAO();
-        selectedStudent = App.selectedStudent;
-        sceneManager = App.sceneManager;
+        selectedStudent = App.getSelectedStudent();
+        sceneManager = App.getSceneManager();
     }
 
     @FXML
@@ -70,9 +70,11 @@ public class EditStudentController {
         String lastName = lastNameTextField.getText();
         String dob = dobTextField.getText();
         String conditions = conditionsTextField.getText();
-        studentDAO.update(new Student(selectedStudent.getId(), firstName, lastName, dob, conditions));
+        selectedStudent = new Student(selectedStudent.getId(), firstName, lastName, dob, conditions);
+        studentDAO.update(selectedStudent);
 
         if (App.viewingProfile){
+            App.setSelectedStudent(selectedStudent);
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentProfile", selectedStudent.getFirstName() + " " + selectedStudent.getLastName() + "'s profile");
             thisStage.show();
@@ -80,7 +82,7 @@ public class EditStudentController {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentView", "Student View");
             thisStage.show();
-            App.selectedStudent = null;
+            App.setSelectedStudent(null);
         }
     }
 
@@ -98,7 +100,7 @@ public class EditStudentController {
             Stage thisStage = sceneManager.getStage();
             sceneManager.switchScene("studentView", "Student View");
             thisStage.show();
-            App.selectedStudent = null;
+            App.setSelectedStudent(null);
         }
     }
 }
