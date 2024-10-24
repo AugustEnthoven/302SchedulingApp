@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.components.registerController">
+<VBox prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.components.registerController">
     <Button fx:id="backButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="35.0" textFill="#222435">
         <graphic>
             <SVGPath fx:id="svgPlay" content="M0.46875 11.8522C-0.15625 12.487 -0.15625 13.5179 0.46875 14.1526L10.0688 23.9026C10.6938 24.5374 11.7088 24.5374 12.3338 23.9026C12.9588 23.2679 12.9588 22.237 12.3338 21.6022L3.86375 12.9999L12.3288 4.39756C12.9538 3.76279 12.9538 2.73193 12.3288 2.09717C11.7038 1.4624 10.6888 1.4624 10.0638 2.09717L0.46375 11.8472L0.46875 11.8522Z" fill="#9c9fb2" scaleX="0.6" scaleY="0.6" />
@@ -22,7 +22,7 @@
             <Insets top="10.0" />
         </VBox.margin>
     </Button>
-    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #ADD8E6;">
         <children>
             <Label text="Register" textAlignment="CENTER" wrapText="true">
                 <font>
@@ -109,7 +109,7 @@
                     <Insets bottom="10.0" left="145.0" right="145.0" top="10.0" />
                 </VBox.margin>
             </HBox>
-            <Button fx:id="registerButton" defaultButton="true" onAction="#register" prefHeight="40.0" prefWidth="270.0" text="Register" textFill="#1a1b24">
+            <Button fx:id="registerButton" defaultButton="true" onAction="#register" prefHeight="40.0" prefWidth="270.0" style="-fx-background-color: #00538C;" text="Register" textFill="WHITE">
                 <padding>
                     <Insets bottom="15.0" left="90.0" right="90.0" top="15.0" />
                 </padding>
@@ -119,7 +119,7 @@
             </Button>
         </children>
     </VBox>
-    <StackPane prefHeight="110.0" prefWidth="200.0">
+    <StackPane prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #ADD8E6;">
         <children>
             <Label fx:id="successMessage" alignment="CENTER" contentDisplay="CENTER" lineSpacing="4.0" prefHeight="110.0" prefWidth="300" textAlignment="CENTER" textFill="#2ada22" wrapText="true" />
             <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" lineSpacing="4.0" prefHeight="110.0" prefWidth="300" textAlignment="CENTER" textFill="#CC3344" wrapText="true" />

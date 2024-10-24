@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.AppBar?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.SetTimetableController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.SetTimetableController">
    <children>
-      <Text layoutX="13.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Schedule" />
-      <Button fx:id="backBtn" layoutX="547.0" layoutY="8.0" onAction="#onBackBtn" mnemonicParsing="false" text="Back" />
-      <Text layoutX="93.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" />
-      <Text layoutX="193.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" />
-      <Text layoutX="293.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" />
-      <Text layoutX="393.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" />
-      <Text layoutX="493.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" />
-      <Text layoutX="30.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Period" />
+      <Text layoutX="235.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SET SCHEDULE" wrappingWidth="115.8828125">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font></Text>
+      <Button fx:id="backBtn" layoutX="541.0" layoutY="11.0" mnemonicParsing="false" onAction="#onBackBtn" text="Back" />
+      <Text layoutX="113.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" />
+      <Text layoutX="210.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" />
+      <Text layoutX="301.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" />
+      <Text layoutX="409.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" />
+      <Text layoutX="516.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" />
+      <Text layoutX="30.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Period" />
       <Text layoutX="45.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text layoutX="45.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
       <Text layoutX="45.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
@@ -51,5 +56,6 @@
       <ChoiceBox fx:id="W6" layoutX="280.0" layoutY="303.0" prefHeight="25.0" prefWidth="110.0" scaleX="0.7" />
       <ChoiceBox fx:id="TH6" layoutX="380.0" layoutY="303.0" prefHeight="25.0" prefWidth="110.0" scaleX="0.7" />
       <ChoiceBox fx:id="F6" layoutX="480.0" layoutY="303.0" prefHeight="25.0" prefWidth="110.0" scaleX="0.7" />
+      <AppBar layoutX="-1.0" layoutY="366.0" prefHeight="15.0" prefWidth="606.0" style="-fx-background-color: #00538C;" titleText="" />
    </children>
 </AnchorPane>
