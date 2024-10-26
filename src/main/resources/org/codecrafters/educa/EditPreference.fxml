@@ -74,7 +74,7 @@
             <ChoiceBox fx:id="SpanishChoicebox" layoutX="169.0" layoutY="310.0" prefWidth="150.0" />
             <ImageView fitHeight="177.0" fitWidth="274.0" layoutX="341.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../classic_disney/CAB302/Switch-to-Employee-Scheduling-Software.jpg" />
+                  <Image url="@../../../images/Switch-to-Employee-Scheduling-Software.jpg" />
                </image>
             </ImageView>
             </children>

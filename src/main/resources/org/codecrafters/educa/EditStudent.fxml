@@ -64,7 +64,7 @@
             
             <ImageView fitHeight="148.0" fitWidth="241.0" layoutX="55.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../classic_disney/CAB302/work-schedules-header-banner.png" />
+                  <Image url="@../../../images/work-schedules-header-banner.png" />
                </image>
             </ImageView>
             </children>

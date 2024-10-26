@@ -62,7 +62,7 @@
                 <Button fx:id="BackButton" layoutX="393.0" layoutY="351.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
                 <ImageView fitHeight="173.0" fitWidth="250.0" layoutX="73.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../../../../classic_disney/CAB302/work-schedules-header-banner.png" />
+                        <Image url="@../../../images/work-schedules-header-banner.png"/>
                     </image>
                 </ImageView>
             </children>
