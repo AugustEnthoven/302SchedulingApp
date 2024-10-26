@@ -38,13 +38,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.TimeTableController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codecrafters.educa.TimeTableController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="288.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="288.0" prefWidth="640.0" style="-fx-background-color: #00538C;" VBox.vgrow="ALWAYS">
       <children>
             <Button fx:id="BackButton" layoutX="14.0" layoutY="322.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="25.0" prefWidth="53.0" text="Back" />
             <Button fx:id="EditButton" layoutX="574.0" layoutY="322.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="25.0" prefWidth="53.0" text="Edit" />
-            <TableView fx:id="Timetable" prefHeight="308.0" prefWidth="640.0">
+            <TableView fx:id="Timetable" prefHeight="308.0" prefWidth="640.0" style="-fx-background-color: #ADD8E6;">
               <columns>
                 <TableColumn fx:id="Period" minWidth="20.0" prefWidth="70.0" text="Period" />
                 <TableColumn fx:id="Monday" prefWidth="114.0" text="Monday" />
